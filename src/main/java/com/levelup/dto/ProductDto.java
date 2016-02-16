@@ -11,10 +11,32 @@ import com.levelup.model.Category;
  */
 
 public class ProductDto {
-    private long id_prod;
+
     private String title_prod;
-    private String description;
     private double price;
     private int quantity;
-    private Category category;
+
+    public String getTitle_prod() {
+        return title_prod;
+    }
+
+    public void setTitle_prod(String title_prod) {
+        this.title_prod = title_prod;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
