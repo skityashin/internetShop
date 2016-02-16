@@ -8,10 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /**
@@ -44,23 +42,23 @@ public class ProductController {
         return new ResponseEntity(product, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id_prod}", method = RequestMethod.DELETE)
     @ResponseBody
-    public ResponseEntity deleteProduct(@RequestBody ProductDto productDto) {
-        if(productDto == null) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
-        deleteProduct(productDto);
+    public ResponseEntity deleteProduct(@PathVariable long id_prod) {
+//        if(id_prod == null) {
+//            return new ResponseEntity(HttpStatus.NO_CONTENT);
+//        }
+        deleteProduct(id_prod);
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id_prod}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity findProduct(@RequestBody ProductDto productDto) {
-        if(productDto == null) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity(findProduct(productDto), HttpStatus.OK);
+    public ResponseEntity findProduct(@PathVariable long id_prod) {
+//        if(id_prod) {
+//            return new ResponseEntity(HttpStatus.NO_CONTENT);
+//        }
+        return new ResponseEntity(findProduct(id_prod), HttpStatus.OK);
     }
 
 
