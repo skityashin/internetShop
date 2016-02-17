@@ -1,6 +1,8 @@
 package com.levelup.dto;
 
-import com.levelup.model.Category;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * Class {@link com.levelup.dto.ProductDto}
@@ -10,6 +12,8 @@ import com.levelup.model.Category;
  * @since 15.02.16
  */
 
+@JsonAutoDetect
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class ProductDto {
 
     private String title_prod;

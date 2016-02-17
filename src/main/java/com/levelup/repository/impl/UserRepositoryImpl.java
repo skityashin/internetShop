@@ -28,8 +28,7 @@ public class UserRepositoryImpl implements UserRepository{
     public void createUser(User user) {
         if(user == null) {
             throw new IllegalArgumentException("User cannot be null");
-        }
-        entityManager.persist(user);
+        } entityManager.persist(user);
     }
 
     @Override

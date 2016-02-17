@@ -12,7 +12,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-@NamedQuery(name = "User.getALL", query = "select u from User u")
+//@NamedQuery(name = "User.getALL", query = "select u from User u")
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
 
 public class User {
 
@@ -28,7 +29,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     public long getId() {
         return id;
     }
@@ -38,17 +39,17 @@ public class User {
     }
 
 
-    @Column(name = "login", nullable = false, length = 50)
-    public String getLogin() {
-        return login;
-    }
+//    @Column(name = "login", length = 50)
+//    public String getLogin() {
+//        return login;
+//    }
+//
+//    public void setLogin(String login) {
+//        this.login = login;
+//    }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
 
-
-    @Column(name = "pass", nullable = false)
+    @Column(name = "pass")
     public String getPass() {
         return pass;
     }

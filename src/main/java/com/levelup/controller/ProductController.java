@@ -42,7 +42,7 @@ public class ProductController {
         return new ResponseEntity(product, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id_prod}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     @ResponseBody
     public ResponseEntity deleteProduct(@PathVariable long id_prod) {
 //        if(id_prod == null) {

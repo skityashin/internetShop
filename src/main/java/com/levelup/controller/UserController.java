@@ -8,10 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,32 +30,36 @@ public class UserController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity createUser(@RequestBody UserDto userDto) {
-        if(userDto == null) {
+        if (userDto == null) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
         User user = new User();
         user.setEmail(userDto.getEmail());
         user.setPass(userDto.getPass());
+        userService.createUser(user);
         return new ResponseEntity(user, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public ResponseEntity deleteUser(@RequestBody UserDto userDto) {
-        if(userDto == null) {
+    public ResponseEntity deleteUser(@PathVariable long id) {
+        User user = userService.findById(id);
+        if (user == null) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        deleteUser(userDto);
+        userService.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    @RequestMapping(value = "/find/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity findUser(@RequestBody UserDto userDto) {
-        if(userDto == null) {
+    public ResponseEntity findUser(@PathVariable long id) {
+
+        User user = userService.findById(id);
+        if (user == null) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity(findUser(userDto), HttpStatus.OK);
+        return new ResponseEntity(user, HttpStatus.OK);
     }
 
 
