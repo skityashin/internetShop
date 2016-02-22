@@ -38,29 +38,26 @@ public class ProductController {
         product.setTitle_prod(productDto.getTitle_prod());
         product.setQuantity(productDto.getQuantity());
         product.setPrice(productDto.getPrice());
-
+        productService.saveProduct(product);
         return new ResponseEntity(product, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id_prod}", method = RequestMethod.DELETE)
     @ResponseBody
     public ResponseEntity deleteProduct(@PathVariable long id_prod) {
-//        if(id_prod == null) {
-//            return new ResponseEntity(HttpStatus.NO_CONTENT);
-//        }
-        deleteProduct(id_prod);
+        productService.deleteProduct(id_prod);
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id_prod}", method = RequestMethod.GET)
+    @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity findProduct(@PathVariable long id_prod) {
-//        if(id_prod) {
-//            return new ResponseEntity(HttpStatus.NO_CONTENT);
-//        }
-        return new ResponseEntity(findProduct(id_prod), HttpStatus.OK);
+        Product product = productService.findById(id_prod);
+        if (product == null) {
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity(product, HttpStatus.OK);
     }
-
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public ResponseEntity getAllProducts() {

@@ -44,7 +44,8 @@ public class CategoryRepositoryImpl implements CategoryRepository{
 
     @Override
     public void deleteCategory(long id_category) {
-        entityManager.remove(id_category);
+        Category removingCategory = entityManager.find(Category.class, id_category);
+        entityManager.remove(removingCategory);
     }
 
     @Override

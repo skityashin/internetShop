@@ -1,0 +1,130 @@
+body {
+     background: white;
+     color: rgba(0, 0, 0, 0.5);
+ }
+div {
+    display: block;
+}
+
+/*header*/
+
+#header {
+    background: #408e2f;
+}
+#header {
+    position: relative;
+    /*width: 780px;*/
+    height: 130px;
+    /*background: gray;*/
+}
+#hdr-overlay {
+    position: relative;
+    top: -15px;
+    left: 14px;
+    width: 780px;
+    height: 145px;
+    /*background: url('header-light.png') top right no-repeat;*/
+}
+#header #hdr-box1 {
+    background: #9ad58e;
+}
+#header #hdr-box2 {
+    background: #68b159;
+}
+#header #hdr-box3 {
+    background: #216a12;
+}
+#header #hdr-box4 {
+    background: #0c4700;
+}
+
+h1 {
+    /*display: block;*/
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+#header h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+}
+#header h2 {
+    color: rgba(0, 0, 0, 0.5);
+}
+#header h2 {
+    position: absolute;
+    top: 65px;
+    right: 140px;
+    margin: 0;
+    width: 8em;
+    font-size: 15px;
+    line-height: 1.33;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+    /*color: rgba(255,255,255,0.5);*/
+}
+#menu {
+    border-color: #0d5146;
+}
+#menu {
+    margin: 0;
+    padding: 1px 0;
+    list-style-type: none;
+    height: 26px;
+    border-bottom: 1px solid black;
+}
+#menu li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+#menu a.sel {
+    background: #0d5146;
+    color: #6ca299;
+}
+#menu a {
+    background: #6ca299;
+    color: #00362d;
+}
+#menu a {
+    position: relative;
+    display: block;
+    margin: 1px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    /*background: gray;*/
+    /*color: white;*/
+}
+/*footer*/
+#footer {
+    color: #552200;
+    background: #ffccaa;
+    border-color: #804015;
+}
+#footer {
+    margin: 10px 0 10px 0;
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+#footer a {
+    color: #804015;
+    background: transparent;
+    padding: 3px 5px;
+}

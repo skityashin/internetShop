@@ -43,7 +43,8 @@ public class MediaRepositoryImpl implements MediaRepository {
 
     @Override
     public void deleteMedia(long id_media) {
-        entityManager.remove(id_media);
+        Media removingMedia = entityManager.find(Media.class, id_media);
+        entityManager.remove(removingMedia);
     }
 
     @Override

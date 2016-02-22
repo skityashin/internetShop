@@ -44,7 +44,8 @@ public class ProductRepositoryImpl implements ProductRepository{
 
     @Override
     public void deleteProduct(long id_prod) {
-        entityManager.remove(id_prod);
+        Product removingProduct = entityManager.find(Product.class, id_prod);
+        entityManager.remove(removingProduct);
     }
 
     @Override

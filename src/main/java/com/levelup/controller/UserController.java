@@ -43,10 +43,6 @@ public class UserController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public ResponseEntity deleteUser(@PathVariable long id) {
-        User user = userService.findById(id);
-        if (user == null) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
         userService.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
     }
@@ -54,7 +50,6 @@ public class UserController {
     @RequestMapping(value = "/find/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity findUser(@PathVariable long id) {
-
         User user = userService.findById(id);
         if (user == null) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
