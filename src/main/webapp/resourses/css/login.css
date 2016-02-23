@@ -1,10 +1,134 @@
+body {
+    background: white;
+    color: rgba(0, 0, 0, 0.5);
+}
+div {
+    display: block;
+}
+
+/*header*/
+
+#header {
+    background: #9AFF9A;
+}
+#header {
+    position: relative;
+    /*width: 780px;*/
+    height: 130px;
+    /*background: gray;*/
+}
+
+h1 {
+    /*display: block;*/
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+#header h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+}
+#header h2 {
+    color: rgba(0, 0, 0, 0.5);
+}
+#header h2 {
+    position: absolute;
+    top: 65px;
+    left: 200px;
+    margin: 0;
+    width: 8em;
+    font-size: 15px;
+    line-height: 1.33;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+    /*color: rgba(255,255,255,0.5);*/
+}
+#header h3{
+    position: absolute;
+    top: 5px;
+    left: 500px;
+    margin: 0;
+    color: #FF6A6A;
+    font-size: 85px;
+}
+#menu {
+    border-color: #0d5146;
+}
+#menu {
+    margin: 0;
+    padding: 1px 0;
+    list-style-type: none;
+    height: 26px;
+    border-bottom: 1px solid black;
+}
+#menu li {
+    font-size: 15px;
+    line-height: 1.33;
+    font-weight: bold;
+
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+#menu a.sel {
+    background: #008B45;
+    color: #FFD700;
+}
+#menu a {
+    background: #6ca299;
+    color: #FFD700;
+}
+#menu a {
+    position: relative;
+    display: block;
+    margin: 1px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    /*background: gray;*/
+    /*color: white;*/
+}
+/*footer*/
+#footer {
+    color: #552200;
+    background: #ffccaa;
+    border-color: #804015;
+}
+#footer {
+    margin: 10px 0 10px 0;
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+#footer a {
+    color: #804015;
+    background: transparent;
+    padding: 3px 5px;
+}
+
+
 .rid-line {
     white-space: nowrap;
     margin: 0 0 24px;
     box-sizing: inherit;
 }
 .rid-line__label_wide {
-    width: 220px;
+    width: 60px;
 }
 .rid-line__label {
     display: inline-block;
@@ -16,25 +140,26 @@
 .rid-line__label-line {
     padding-bottom: 7px;
     white-space: normal;
+
 }
 .rid-line__content {
     display: inline-block;
     position: relative;
 }
 .rid-line__input_profile-edit {
-    width: 465px; //465
+    width: 120px; //465
 }
 .rid-line__input {
     display: inline-block;
 }
 .g-rid-input {
-    font-size: 18px;
+    font-size: 12px;
     border: 1px solid #d5d5d5;
     border-color: #fa868b;
-    width: 431px;
-    padding: 16px;
+    width: 120px;
+    padding: 4px;
     outline: 0;
-    border-radius: 3px;
+    border-radius: 2px;
     color: grey;
 }
 input {
@@ -44,12 +169,12 @@ input {
     color: #f45159;
 }
 .rid-line__tip {
-    display: inline-block;
-    margin: -1px 0 0 25px;
+
+    margin: 1px 0 0 5px;
     width: 265px;
     white-space: normal;
     color: grey;
-    font-size: 13px;
+    font-size: 10px;
 }
 .rid-emailpick__name {
     position: relative;
@@ -63,7 +188,7 @@ input {
     border-top-right-radius: 0;
 }
 .rid-line_subline {
-    margin: 5px 0 10px 220px;
+    margin: 2px 0 2px 220px;
 }
 .g-hidden {
     display: none!important;
@@ -90,17 +215,18 @@ input[type=checkbox], input[type=radio] {
     color: #fff;
     background: linear-gradient(to bottom,#5e96f9 0,#4683f0 100%);
     box-shadow: 0 0 1px rgba(14,35,73,.9)inset,0 1px 1px rgba(0,0,0,.2);
-    height: 55px;
+    height: 20px;
+    width: 100px;
     border: none;
 }
 .rid-btn {
     position: relative;
-    border-radius: 3px;
+    border-radius: 5px;
     outline: 0;
-    font-size: 18px;
-    line-height: 19px;
+    font-size: 10px;
+    line-height: 10px;
     display: block;
-    padding: 0 24px;
+    padding: 0 4px;
 
 }
 #Name6, #Name8 {
@@ -111,8 +237,8 @@ input[type=checkbox], input[type=radio] {
     position: absolute;
     width: 18px;
     height: 12px;
-    top: 20px;
-    right: 14px;
+    top: 6px;
+    right: 5px;
     display: block;
     z-index: 2;
     cursor: pointer;
@@ -122,8 +248,8 @@ input[type=checkbox], input[type=radio] {
     position: absolute;
     width: 18px;
     height: 12px;
-    top: 20px;
-    right: 14px;
+    top: 6px;
+    right: 5px;
     display: block;
     z-index: 2;
     cursor: pointer;
@@ -132,3 +258,57 @@ input[type=checkbox], input[type=radio] {
     background-position: 0 0;
     background-repeat: no-repeat;
 }
+.registration_common_block {
+    position: absolute;
+    top: 10px;
+    right: -140px;
+    margin: 0;
+}
+.registration_register_block {
+    position: absolute;
+    top: 70px;
+    right: -140px;
+    margin: 0;
+}
+
+
+.header-search {
+    position: absolute;
+    padding-top: 10px;
+    left: 900px;
+    top: 50px;
+
+}
+.header-search-input-text-wrap {
+
+    border-radius: 5px 0px 0px 5px;
+    position: absolute;
+    height: 4px;
+    left: -200px;
+    top: 10px;
+}
+
+.header-search-input-text {
+
+    box-sizing: border-box;
+    border: 0;
+    font-size: 1.30769em;
+    width: 100%;
+    height: 2em;
+    text-indent: 0.5em;
+    font-size: 12px;
+    box-shadow: inset 2px 2px 0 1px #f2f2f3;
+}
+
+.btn-link-green {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 6em;
+    height: 2.8em;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: -1px;
+
+}
+
