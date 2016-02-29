@@ -1,0 +1,258 @@
+/*.content{*/
+    /*width: 100%;*/
+    /*height: 700px;*/
+    /*padding: 1em;*/
+/*}*/
+
+/*.rid-line {*/
+    /*white-space: nowrap;*/
+    /*margin: 0 0 24px;*/
+    /*box-sizing: inherit;*/
+/*}*/
+/*.rid-line__label_wide {*/
+    /*width: 220px;*/
+/*}*/
+/*.rid-line__label {*/
+    /*display: inline-block;*/
+    /*margin-right: -1px;*/
+/*}*/
+/*.rid-line__btn, .rid-line__content, .rid-line__input, .rid-line__label, .rid-line__tip, .rid-top-popup {*/
+    /*vertical-align: middle;*/
+/*}*/
+/*.rid-line__label-line {*/
+    /*padding-bottom: 7px;*/
+    /*white-space: normal;*/
+/*}*/
+/*.rid-line__content {*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+/*}*/
+/*.rid-line__input_profile-edit {*/
+    /*width: 465px; //465*/
+/*}*/
+/*.rid-line__input {*/
+    /*display: inline-block;*/
+/*}*/
+/*.rid-line_error, .g-rid-input {*/
+    /*border-color: #fa868b;*/
+/*}*/
+/*.g-rid-input {*/
+    /*font-size: 18px;*/
+    /*border: 1px solid #d5d5d5;*/
+    /*width: 431px;*/
+    /*padding: 16px;*/
+    /*outline: 0;*/
+    /*border-radius: 3px;*/
+    /*color: grey;*/
+/*}*/
+/*input {*/
+    /*line-height: normal;*/
+/*}*/
+/*.rid-line_error, .rid-line__tip, .rid-line__tip-line {*/
+    /*color: #f45159;*/
+/*}*/
+/*.rid-line__tip {*/
+    /*display: inline-block;*/
+    /*margin: -1px 0 0 25px;*/
+    /*width: 265px;*/
+    /*white-space: normal;*/
+/*}*/
+/*.rid-line__label-line_tip, .rid-line__tip {*/
+    /*color: grey;*/
+    /*font-size: 13px;*/
+/*}*/
+/*.rid-emailpick__name {*/
+    /*position: relative;*/
+    /*margin: 0 -1px 0 0;*/
+    /*width: 270px;*/
+/*}*/
+/*.rid-datepick__day, .rid-datepick__year, .rid-emailpick__domain, .rid-emailpick__name, .rid-selectbox_phonecodepicker {*/
+    /*vertical-align: middle;*/
+    /*display: inline-block;*/
+/*}*/
+/*.rid-datepick :first-child, .g-rid-input, .rid-emailpick :first-child, .g-rid-input {*/
+    /*border-bottom-right-radius: 0;*/
+    /*border-top-right-radius: 0;*/
+/*}*/
+/*.rid-emailpick__domain {*/
+    /*position: relative;*/
+    /*margin: 0 -1px 0 0;*/
+    /*width: 190px;*/
+/*}*/
+/*.rid-selectbox_email {*/
+    /*width: 195px;*/
+/*}*/
+/*.rid-selectbox {*/
+    /*padding: 0;*/
+    /*width: 100%;*/
+    /*margin: 0;*/
+    /*position: relative;*/
+    /*text-align: center;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.rid-line_error, .rid-radiobtn__label, .rid-line_error, .rid-radiobtn__label:focus, .rid-line_error, .rid-selectbox select {*/
+    /*border: 1px solid #fa868b;*/
+/*}*/
+/*.rid-selectbox_email select, .rid-selectbox_email select:focus {*/
+    /*border-radius: 0 3px 3px 0;*/
+/*}*/
+/*.rid-selectbox select {*/
+    /*height: 55px;*/
+    /*padding: 16px 14px;*/
+    /*border: 1px solid #ccc;*/
+    /*font-size: 18px;*/
+    /*width: 100%;*/
+    /*box-shadow: none;*/
+    /*background-color: transparent;*/
+    /*background-image: none;*/
+    /*-webkit-appearance: none;*/
+    /*z-index: 2;*/
+    /*position: relative;*/
+    /*cursor: pointer;*/
+    /*outline: 0;*/
+    /*-webkit-user-select: none;*/
+/*}*/
+/*.rid-line_subline {*/
+    /*margin: 5px 0 10px 220px;*/
+/*}*/
+/*.g-hidden {*/
+    /*display: none!important;*/
+/*}*/
+/*.g-rid-input_password {*/
+    /*padding-right: 16px;*/
+/*}*/
+/*.rid-datepick__day {*/
+    /*position: relative;*/
+    /*margin: 0 -1px 0 0;*/
+    /*width: 111px;*/
+/*}*/
+/*select {*/
+    /*border-radius: 3px 0 0 3px;*/
+/*}*/
+/*.rid-datepick__month {*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*margin: 0 -1px 0 0;*/
+    /*vertical-align: top;*/
+    /*width: 190px;*/
+    /*height: 55px;*/
+/*}*/
+/*.rid-selectbox_monthpicker {*/
+    /*border: none;*/
+/*}*/
+/*.rid-selectbox_monthpicker select {*/
+    /*padding: 15px 14px;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 0;*/
+    /*line-height: 23px;*/
+/*}*/
+/*.rid-datepick__year {*/
+    /*position: relative;*/
+    /*margin: 0 -1px 0 0;*/
+    /*width: 158px;*/
+/*}*/
+/*.rid-selectbox_yearpicker select {*/
+    /*border-radius: 0 3px 3px 0;*/
+/*}*/
+/*.rid-btn, .rid-radiobtn {*/
+    /*-webkit-user-select: none;*/
+/*}*/
+/*.rid-radiobtn {*/
+    /*display: inline-block;*/
+    /*margin: 0 -1px 0 0;*/
+/*}*/
+/*input[type=checkbox], input[type=radio] {*/
+    /*box-sizing: border-box;*/
+    /*padding: 0;*/
+/*}*/
+/*.rid-radiobtn__elem {*/
+    /*position: absolute;*/
+    /*left: -10000px;*/
+/*}*/
+/*.rid-radiobtn:first-child, .rid-radiobtn__label {*/
+    /*border-top-left-radius: 3px;*/
+    /*border-bottom-left-radius: 3px;*/
+/*}*/
+/*.rid-radiobtn:last-child, .rid-radiobtn__label {*/
+    /*border-top-right-radius: 3px;*/
+    /*border-bottom-right-radius: 3px;*/
+/*}*/
+/*.rid-line_error, .rid-radiobtn__label, .rid-line_error, .rid-radiobtn__label:focus, .rid-line_error, .rid-selectbox select {*/
+    /*border: 1px solid #fa868b;*/
+/*}*/
+/*.rid-radiobtn__label {*/
+    /*font-size: 18px;*/
+    /*border: 1px solid #d5d5d5;*/
+    /*padding: 16px 24px;*/
+    /*outline: 0;*/
+    /*background-color: #fff;*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    /*cursor: pointer;*/
+    /*position: relative;*/
+    /*box-shadow: 0 1px 1px rgba(0,0,0,.1);*/
+/*}*/
+/*.rid-btn, .rid-radiobtn {*/
+    /*-moz-user-select: none;*/
+    /*-ms-user-select: none;*/
+    /*-webkit-user-select: none;*/
+/*}*/
+/*.rid-radiobtn {*/
+    /*display: inline-block;*/
+    /*margin: 0 -1px 0 0;*/
+/*}*/
+/*.rid-radiobtn:last-child, .rid-radiobtn__label {*/
+    /*border-top-right-radius: 3px;*/
+    /*border-bottom-right-radius: 3px;*/
+/*}*/
+/*.rid {*/
+    /*min-height: 100%;*/
+    /*margin-bottom: -60px;*/
+/*}*/
+/*.rid-btn_save {*/
+    /*cursor: pointer;*/
+    /*color: #fff;*/
+    /*background: linear-gradient(to bottom,#5e96f9 0,#4683f0 100%);*/
+    /*box-shadow: 0 0 1px rgba(14,35,73,.9)inset,0 1px 1px rgba(0,0,0,.2);*/
+    /*height: 55px;*/
+    /*border: none;*/
+/*}*/
+/*.rid-btn {*/
+    /*position: relative;*/
+    /*border-radius: 3px;*/
+    /*outline: 0;*/
+    /*font-size: 18px;*/
+    /*line-height: 19px;*/
+    /*display: block;*/
+    /*padding: 0 24px;*/
+/*}*/
+/*#Name2, #Name4, #Name6, #Name10, #Name8, #Name12,  #Name14{*/
+    /*color: green;*/
+/*}*/
+
+/*.g-rid-input__eye_blue {*/
+    /*background-image: url(http://qutu.ws/chat/img/share_eye.png);*/
+    /*position: absolute;*/
+    /*width: 18px;*/
+    /*height: 12px;*/
+    /*top: 20px;*/
+    /*right: 14px;*/
+    /*display: block;*/
+    /*z-index: 2;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.g-rid-input__eye {*/
+    /*background-image: url(http://www.iconsearch.ru/uploads/icons/fugue/16x16/eye-disable.png);*/
+    /*position: absolute;*/
+    /*width: 18px;*/
+    /*height: 12px;*/
+    /*top: 20px;*/
+    /*right: 14px;*/
+    /*display: block;*/
+    /*z-index: 2;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.g-pseudo-link_reload-icon:after, .g-rid-input__eye, .rid-line__capcha-placeholder:after, .rid-popup__icon, .rid-top-popup__closer {*/
+    /*background-position: 0 0;*/
+    /*background-repeat: no-repeat;*/
+/*}*/

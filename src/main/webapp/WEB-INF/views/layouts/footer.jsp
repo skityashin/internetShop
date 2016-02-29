@@ -1,28 +1,15 @@
-<%--
- Created by IntelliJ IDEA.
-  User: Skityashin Vladimir
-  Date: 22.02.2016
-  Time: 19:06
-  To change this template use File | Settings | File Templates.
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-<div id="footer">
-  Copyright © Skityashin;
-  <a href="#">Lorem</a> |
-  <a href="#">Ipsum</a> |
-  <a href="#">Dolor</a> |
-  <a href="#">Sit amet</a> |
-  <a href="#">Aliquip</a>
-</div>
+    <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
 
 
 
-</body>
-</html>
+    <div id="footer">
+        Copyright © Skityashin;
+        <a href="#">Каталог</a> |
+        <a href="#">Доставка</a> |
+        <a href="#">Гарантия</a> |
+        <a href="#">Кредит</a> |
+        <a href="#">Контакты</a>
+    </div>
+
+
