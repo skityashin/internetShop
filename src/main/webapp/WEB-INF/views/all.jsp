@@ -181,7 +181,13 @@ http://localhost:8080/hello/greeting
 </ul>
 
 
+<div id="content">
+  <h2>АКЦИИ</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/JOMnHaMhoN8?autoplay=1" frameborder="0"
+          allowfullscreen></iframe>
 
+
+</div>
 
 <div id="footer">
   Copyright © Skityashin;

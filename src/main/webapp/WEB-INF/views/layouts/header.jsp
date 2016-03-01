@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
+<script src="/resources/js/main.js"></script>
 
 
 <div id="header">
@@ -9,84 +10,82 @@
 
     <h2>В интернет магазин</h2>
 
-
-    <div class="header-search-wrap" id="search">
-        <form name="search-form" class="header-search" method="get" action="http://"
+    <div id="search">
+        <form name="search-form" class="header-search1" method="get" action="http://"
               onsubmit="document.fireEvent('searchButton');" data-secure-csrf="0">
-
-            <div name="header-search-input-text-wrap" class="header-search-input-text-wrap ">
-                <input autocomplete="off" type="text" name="text" class="header-search-input-text" placeholder="Поиск"
+            <div>
+                <input autocomplete="off" type="text" name="text" class="header-search-input-text1" placeholder="Поиск"
                        value="" tabindex="1">
             </div>
-
-				<span class="btn-link btn-link-green">
-					<button name="search-button" class="btn-link-i" type="submit">Найти</button>
+				<span class="btn-link-green1">
+					<button name="search-button" class="btn-link-i1" type="submit">Найти</button>
 				</span>
         </form>
     </div>
 
 
-    <div class="registration_common_block">
-        <form action="#" method="post" class="rf">
-            <div class="rid-line">
-                <label for="createEmail" class="rid-line__label rid-line__label_wide">
-                    <div class="rid-line__label-line">Email</div>
+    <div class="registration_common_block1">
+        <form action="#" method="post">
+            <div class="rid-line1">
+                <label for="createEmail2" class="rid-line__label1 rid-line__label_wide1">
+                    <div class="rid-line__label-line1">Email</div>
                 </label>
 
-                <div class="rid-line__content">
-                    <div class="rid-emailpick">
-                        <div class="rid-emailpick__name">
-                            <input type="text" class="g-rid-input" id="createEmail" placeholder="Введите Email">
+                <div class="rid-line__content1">
+                    <div class="rid-emailpick1">
+                        <div class="rid-emailpick__name1">
+                            <input type="text" class="g-rid-input1" id="createEmail2" placeholder="Введите Email">
                         </div>
                     </div>
                 </div>
-                <div class="rid-line__tip">
-                    <div class="rid-line__tip-content">
-                        <div class="rid-line__tip-line" style="display:none" id="Name5">Поле должно быть заполненным
+                <div class="rid-line__tip1">
+                    <div class="rid-line__tip-content1">
+                        <div class="rid-line__tip-line1" style="display:none" id="Name4">Поле должно быть заполненным
                         </div>
-                        <div class="rid-line__tip-line" id="Name6" style="display:none">ok</div>
+                        <div class="rid-line__tip-line1" id="Name1" style="display:none">ok</div>
                     </div>
                 </div>
-                <div class="rid-line rid-line_subline">
-                    <div class="suggest_wrap g-hidden"></div>
+                <div class="rid-line1 rid-line_subline1">
+                    <div class="suggest_wrap g-hidden1"></div>
                 </div>
             </div>
             <div>
-                <div class="rid-line">
-                    <label for="createPassword" class="rid-line__label rid-line__label_wide">
-                        <div class="rid-line__label-line">Pass</div>
+                <div class="rid-line1">
+                    <label for="createPassword2" class="rid-line__label1 rid-line__label_wide1">
+                        <div class="rid-line__label-line1">Pass</div>
                     </label>
 
-                    <div class="rid-line__content">
-                        <div class="rid-line__input rid-line__input_profile-edit rid-line_pass-reliability rid-line_pass-reliability-0">
-                            <input type="password" class="g-rid-input g-rid-input_password" id="createPassword">
-                            <span class="g-rid-input__eye g-rid-input__eye_grey" id="createPassword1"></span>
+                    <div class="rid-line__content1">
+                        <div class="rid-line__input1 rid-line__input_profile-edit1 ">
+                            <input type="password" class="g-rid-input1 g-rid-input_password1" id="createPassword2">
+                            <span class="g-rid-input__eye1 g-rid-input__eye_grey1" id="createPassword11"></span>
                         </div>
                     </div>
-                    <div class="rid-line__tip">
-                        <div class="rid-line__tip-content">
-                            <div class="rid-line__tip-line" style="display:none" id="Name7">Пароль должен содержать от 6
+                    <div class="rid-line__tip1">
+                        <div class="rid-line__tip-content1">
+                            <div class="rid-line__tip-line1" style="display:none" id="Name2">Пароль должен содержать от
+                                6
                                 символов
                             </div>
-                            <div class="rid-line__tip-line" id="Name8" style="display:none">ok</div>
+                            <div class="rid-line__tip-line1" id="Name3" style="display:none">ok</div>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <div class="registration_register_block">
-        <div class="rid-line rid-line_without-label">
-            <div class="rid-line__content">
-                <div class="rid-line__save-btn register_button_wrap">
-                    <button class="rid-btn rid-btn_common rid-btn_save rid-btn_signup" id="rid-btn__inner">
-                        <span class="rid-btn__inner">Login</span>
+    <div class="registration_register_block1">
+        <div class="rid-line1">
+            <div class="rid-line__content1">
+                <div>
+                    <button class="rid-btn1 rid-btn_save1" id="rid-btn__inner">
+                        <span>Login</span>
                     </button>
                 </div>
             </div>
-            <div class="rid-line__tip">
-                <div class="rid-line__tip-content">
-                    <div class="rid-line__tip-line">Нажимая «Login»,
+            <div class="rid-line__tip1">
+                <div class="rid-line__tip-content1">
+                    <div class="rid-line__tip-line1">Нажимая «Login»,
                         <br>вы подтверждаете свое <br> согласие с
                         <a class="g-pseudo-link legal_link"> правилами</a>
                     </div>

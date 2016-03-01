@@ -80,12 +80,12 @@ public class ApplicationConfig {
     public DataSource makeDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//        dataSource.setUrl(url);
-//        dataSource.setUsername(username);
-//        dataSource.setPassword(password);
-        dataSource.setUrl("jdbc:mysql://localhost:3306/internetshop");
-        dataSource.setUsername("root");
-        dataSource.setPassword("");
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+//        dataSource.setUrl("jdbc:mysql://localhost:3306/internetshop");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("");
         return dataSource;
     }
 }
