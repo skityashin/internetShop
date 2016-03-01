@@ -131,14 +131,12 @@ li {
 
 .rid-line {
     white-space: nowrap;
-    margin: 0 0 1em;
     box-sizing: inherit;
 }
 .rid-line__label_wide {
     width: 60px;
 }
 .rid-line__label {
-    display: inline-block;
     margin-right: -1px;
 }
 .rid-line__btn, .rid-line__content, .rid-line__input, .rid-line__label, .rid-line__tip {
@@ -152,19 +150,20 @@ li {
 .rid-line__content {
     display: inline-block;
     position: relative;
+    left: 0.5em;
 }
 .rid-line__input_profile-edit {
-    width: 120px; //465
+    width: 7.5em;
 }
 .rid-line__input {
     display: inline-block;
 }
 .g-rid-input {
-    font-size: 12px;
-    border: 1px solid #d5d5d5;
+    font-size: 1em;
+    border: 0.5em solid #d5d5d5;
     border-color: #fa868b;
-    width: 120px;
-    padding: 4px;
+    width: 20em;
+    padding: 0.25em;
     outline: 0;
     border-radius: 2px;
     color: grey;
@@ -176,12 +175,10 @@ input {
     color: #f45159;
 }
 .rid-line__tip {
-
     margin: 1px 0 0 5px;
-    width: 265px;
     white-space: normal;
     color: grey;
-    font-size: 10px;
+    font-size: 0.8em;
 }
 .rid-emailpick__name {
     position: relative;
@@ -222,19 +219,18 @@ input[type=checkbox], input[type=radio] {
     color: #fff;
     background: linear-gradient(to bottom,#5e96f9 0,#4683f0 100%);
     box-shadow: 0 0 1px rgba(14,35,73,.9)inset,0 1px 1px rgba(0,0,0,.2);
-    height: 20px;
-    width: 100px;
     border: none;
 }
 .rid-btn {
     position: relative;
     border-radius: 5px;
     outline: 0;
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 1em;
+    line-height: 2em;
     display: block;
     padding: 0 4px;
-
+    width: 20em;
+    height: 2em;
 }
 #Name6, #Name8 {
     color: green;
@@ -252,11 +248,10 @@ input[type=checkbox], input[type=radio] {
 }
 .g-rid-input__eye {
     background-image: url(http://www.iconsearch.ru/uploads/icons/fugue/16x16/eye-disable.png);
-    position: absolute;
-    width: 18px;
-    height: 12px;
-    top: 6px;
-    right: 5px;
+    width: 1em;
+    height: 0.8em;
+    top: 0.8em;
+    left: 18em;
     display: block;
     z-index: 2;
     cursor: pointer;
@@ -266,11 +261,11 @@ input[type=checkbox], input[type=radio] {
     background-repeat: no-repeat;
 }
 .registration_common_block {
-    position: relative;
+    background: yellowgreen;
     top: 1em;
-    right: -90em;
+    left: 50em;
     margin: 0;
-    width: 15em;
+    width: 25em;
 }
 .registration_register_block {
     position: absolute;
@@ -329,9 +324,9 @@ input[type=checkbox], input[type=radio] {
 
 
 #content {
-    height: 70%;
-    margin-left: 285px;
-    padding: 10px;
+    height: 100%;
+    margin-left: 23.5em;
+    padding: 2em;
     background: #EED8AE;
 }
 

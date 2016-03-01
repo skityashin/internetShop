@@ -276,26 +276,46 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="rid-line rid-line_without-label">
+                    <div class="rid-line__content">
+                        <div class="rid-line__save-btn register_button_wrap">
+                            <button class="rid-btn rid-btn_common rid-btn_save rid-btn_signup" id="rid-btn__inner">
+                                <span class="rid-btn__inner">Зарегистрироваться</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="rid-line__tip">
+                        <div class="rid-line__tip-content">
+                            <div class="rid-line__tip-line">Нажимая кнопку «Зарегистрироваться»,
+                                <br>вы подтверждаете свое согласие<br> с
+                                <a class="g-pseudo-link legal_link">Моими правилами</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </form>
         </div>
         <%--<div class="registration_register_block">--%>
-        <%--<div class="rid-line rid-line_without-label">--%>
-        <%--<div class="rid-line__content">--%>
-        <%--<div class="rid-line__save-btn register_button_wrap">--%>
-        <%--<button class="rid-btn rid-btn_common rid-btn_save rid-btn_signup" id="rid-btn__inner">--%>
-        <%--<span class="rid-btn__inner">Зарегистрироваться</span>--%>
-        <%--</button>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="rid-line__tip">--%>
-        <%--<div class="rid-line__tip-content">--%>
-        <%--<div class="rid-line__tip-line">Нажимая кнопку «Зарегистрироваться»,--%>
-        <%--<br>вы подтверждаете свое согласие<br> с--%>
-        <%--<a class="g-pseudo-link legal_link">Моими правилами</a>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-        <%--</div>--%>
+            <%--<div class="rid-line rid-line_without-label">--%>
+                <%--<div class="rid-line__content">--%>
+                    <%--<div class="rid-line__save-btn register_button_wrap">--%>
+                        <%--<button class="rid-btn rid-btn_common rid-btn_save rid-btn_signup" id="rid-btn__inner">--%>
+                            <%--<span class="rid-btn__inner">Зарегистрироваться</span>--%>
+                        <%--</button>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="rid-line__tip">--%>
+                    <%--<div class="rid-line__tip-content">--%>
+                        <%--<div class="rid-line__tip-line">Нажимая кнопку «Зарегистрироваться»,--%>
+                            <%--<br>вы подтверждаете свое согласие<br> с--%>
+                            <%--<a class="g-pseudo-link legal_link">Моими правилами</a>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         <%--</div>--%>
     </div>
 </section>
