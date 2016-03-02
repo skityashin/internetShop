@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <link rel="stylesheet" type="text/css" href="/resources/css/user.css">
-<script src="/resources/js/user.js"></script>
+<%--<script src="/resources/js/user.js"></script>--%>
 
 <section class="content">
     <div id="sidebar">

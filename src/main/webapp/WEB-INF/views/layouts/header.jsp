@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" type="text/css" href="/resources/css/main.css">
-<script src="/resources/js/main.js"></script>
 
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css">
+<%--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>--%>
+<%--<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>--%>
+<script  type="text/javascript" src="/resources/js/main.js"></script>
 
 <div id="header">
     <h1>Добро пожаловать!</h1>
@@ -83,14 +85,14 @@
                     </button>
                 </div>
             </div>
-            <div class="rid-line__tip1">
-                <div class="rid-line__tip-content1">
-                    <div class="rid-line__tip-line1">Нажимая «Login»,
-                        <br>вы подтверждаете свое <br> согласие с
-                        <a class="g-pseudo-link legal_link"> правилами</a>
-                    </div>
-                </div>
-            </div>
+            <%--<div class="rid-line__tip1">--%>
+                <%--<div class="rid-line__tip-content1">--%>
+                    <%--<div class="rid-line__tip-line1">Нажимая «Login»,--%>
+                        <%--<br>вы подтверждаете свое <br> согласие с--%>
+                        <%--<a class="g-pseudo-link legal_link"> правилами</a>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         </div>
     </div>
 
