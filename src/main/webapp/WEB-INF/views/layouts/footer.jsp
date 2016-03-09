@@ -5,9 +5,9 @@
 
     <div id="footer">
         Copyright © Skityashin;
-        <a href="#">Каталог</a> |
-        <a href="#">Доставка</a> |
-        <a href="#">Гарантия</a> |
+        <a href="/product/getAll">Каталог</a> |
+        <a href="#">Админка</a> |
+        <a href="/product/getAll">Продукт</a> |
         <a href="#">Кредит</a> |
         <a href="#">Контакты</a>
     </div>

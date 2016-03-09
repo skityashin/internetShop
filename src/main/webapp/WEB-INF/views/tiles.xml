@@ -24,5 +24,16 @@
         <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
     </definition>
 
+    <definition name="one_product" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/views/one_product.jsp"/>
+    </definition>
+
+    <definition name="all_product" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/views/all_product.jsp"/>
+    </definition>
+
+    <definition name="add_product" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/views/add_product.jsp"/>
+    </definition>
 
 </tiles-definitions>

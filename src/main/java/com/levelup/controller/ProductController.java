@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,24 +50,30 @@ public class ProductController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+//    @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public ResponseEntity findProduct(@PathVariable long id_prod) {
+//        Product product = productService.findById(id_prod);
+//        if (product == null) {
+//            return new ResponseEntity(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity(product, HttpStatus.OK);
+//    }
+
     @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
-    @ResponseBody
-    public ResponseEntity findProduct(@PathVariable long id_prod) {
+    public String findProduct(@PathVariable long id_prod, Model model) {
         Product product = productService.findById(id_prod);
-        if (product == null) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity(product, HttpStatus.OK);
+        model.addAttribute("title", product.getTitle_prod());
+        model.addAttribute("price", product.getPrice());
+        model.addAttribute("description", product.getDescription());
+        return "one_product";
     }
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public ResponseEntity getAllProducts() {
+    public String getAllProducts(Model model) {
         List<Product> products = productService.getAllProduct();
-        if (CollectionUtils.isEmpty(products)) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity(products, HttpStatus.OK);
+            model.addAttribute("products", products);
+        return "all_product";
     }
-
 
 }

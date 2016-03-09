@@ -13,8 +13,7 @@
     <h2>В интернет магазин</h2>
 
     <div id="search">
-        <form name="search-form" class="header-search1" method="get" action="http://"
-              onsubmit="document.fireEvent('searchButton');" data-secure-csrf="0">
+        <form name="search-form" class="header-search1" method="get" action="/product/find/">
             <div>
                 <input autocomplete="off" type="text" name="text" class="header-search-input-text1" placeholder="Поиск"
                        value="" tabindex="1">
@@ -98,9 +97,9 @@
 
 
     <ul id="menu">
-        <li><a class="sel" href="#"><span></span>Каталог</a></li>
-        <li><a href="#"><span></span>Доставка</a></li>
-        <li><a href="#"><span></span>Гарантия</a></li>
+        <li><a class="sel" href="/product/getAll"><span></span>Каталог</a></li>
+        <li><a href="#"><span></span>Админка</a></li>
+        <li><a href="/product/find/{id_prod}"><span></span>Продукт</a></li>
         <li><a href="#"><span></span>Кредит</a></li>
         <li><a href="#"><span></span>Контакты</a></li>
     </ul>
