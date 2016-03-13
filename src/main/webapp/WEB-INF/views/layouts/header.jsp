@@ -26,7 +26,7 @@
 
 
     <div class="registration_common_block1">
-        <form action="#" method="post">
+        <form action="/user/login" method="post">
             <div class="rid-line1">
                 <label for="createEmail2" class="rid-line__label1 rid-line__label_wide1">
                     <div class="rid-line__label-line1">Email</div>
@@ -73,26 +73,27 @@
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="registration_register_block1">
-        <div class="rid-line1">
-            <div class="rid-line__content1">
-                <div>
-                    <button class="rid-btn1 rid-btn_save1" id="rid-btn__inner">
-                        <span>Login</span>
-                    </button>
+            <div class="registration_register_block1">
+                <div class="rid-line1">
+                    <div class="rid-line__content1">
+                        <div>
+                            <button class="rid-btn1 rid-btn_save1" id="rid-btn__inner">
+                                <span>Login</span>
+                            </button>
+                        </div>
+                    </div>
+                    <%--<div class="rid-line__tip1">--%>
+                    <%--<div class="rid-line__tip-content1">--%>
+                    <%--<div class="rid-line__tip-line1">Нажимая «Login»,--%>
+                    <%--<br>вы подтверждаете свое <br> согласие с--%>
+                    <%--<a class="g-pseudo-link legal_link"> правилами</a>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
                 </div>
             </div>
-            <%--<div class="rid-line__tip1">--%>
-                <%--<div class="rid-line__tip-content1">--%>
-                    <%--<div class="rid-line__tip-line1">Нажимая «Login»,--%>
-                        <%--<br>вы подтверждаете свое <br> согласие с--%>
-                        <%--<a class="g-pseudo-link legal_link"> правилами</a>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        </div>
+
+        </form>
     </div>
 
 

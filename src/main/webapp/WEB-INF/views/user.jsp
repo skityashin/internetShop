@@ -17,7 +17,7 @@
 
 
         <div class="registration_common_block">
-            <form action="#" method="post" class="rf">
+            <form action="/user/join" method="post" class="rf">
                 <div class="rid-line">
                     <label for="typeInName" class="rid-line__label rid-line__label_wide">
                         <div class="rid-line__label-line">Имя</div>

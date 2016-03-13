@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.*;
 import java.util.List;
 
 /**
@@ -29,36 +30,37 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity createProduct(@RequestBody ProductDto productDto) {
+    @RequestMapping(method = RequestMethod.GET, value =  "/add")
+    public String showForm(){
+        return "add_product";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/add")
+    public String showResult(@ModelAttribute ProductDto productDto, Model model){
         if(productDto == null) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
+            return "add_product";
         }
         Product product = new Product();
         product.setTitle_prod(productDto.getTitle_prod());
         product.setQuantity(productDto.getQuantity());
         product.setPrice(productDto.getPrice());
         productService.saveProduct(product);
-        return new ResponseEntity(product, HttpStatus.OK);
+        model.addAttribute("title", product.getTitle_prod());
+        model.addAttribute("price", product.getPrice());
+        model.addAttribute("description", product.getDescription());
+        return "one_product";
     }
+
+
 
     @RequestMapping(value = "/delete/{id_prod}", method = RequestMethod.DELETE)
     @ResponseBody
+    @SuppressWarnings("unchecked")
     public ResponseEntity deleteProduct(@PathVariable long id_prod) {
         productService.deleteProduct(id_prod);
-        return new ResponseEntity(HttpStatus.OK);
+        return  new ResponseEntity(HttpStatus.OK);
     }
 
-//    @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
-//    @ResponseBody
-//    public ResponseEntity findProduct(@PathVariable long id_prod) {
-//        Product product = productService.findById(id_prod);
-//        if (product == null) {
-//            return new ResponseEntity(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity(product, HttpStatus.OK);
-//    }
 
     @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
     public String findProduct(@PathVariable long id_prod, Model model) {

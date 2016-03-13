@@ -3,6 +3,8 @@ package com.levelup.repository.impl;
 import com.levelup.model.User;
 import com.levelup.repository.UserRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -39,6 +41,17 @@ public class UserRepositoryImpl implements UserRepository{
     @Override
     public User findById(long id) {
         return entityManager.find(User.class, id);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.email = :email");
+        query.setParameter("email", email);
+        List<User> users = query.getResultList();
+        if (!CollectionUtils.isEmpty(users)) {
+            return users.get(1);
+        }
+        return null;
     }
 
     @Override

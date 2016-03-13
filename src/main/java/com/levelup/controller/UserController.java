@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,17 +28,35 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity createUser(@RequestBody UserDto userDto) {
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String loginUser(@RequestBody UserDto userDto) {
         if (userDto == null) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
+            return "user1";
+        }
+        
+
+        return "all_product";
+    }
+
+
+    @RequestMapping(value = "/join", method = RequestMethod.GET)
+    public String showLoginForm() {
+        return "user1";
+    }
+
+    @RequestMapping(value = "/join", method = RequestMethod.POST)
+    public String createUser(@RequestBody UserDto userDto, Model model) {
+        if (userDto == null) {
+            return "user1";
         }
         User user = new User();
         user.setEmail(userDto.getEmail());
         user.setPass(userDto.getPass());
         userService.createUser(user);
-        return new ResponseEntity(user, HttpStatus.OK);
+        model.addAttribute("email", user.getEmail());
+        model.addAttribute("pass", user.getPass());
+        return "one_product";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)

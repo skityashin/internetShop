@@ -16,8 +16,8 @@
     <!-- Pages -->
 
 
-    <definition name="user" extends="layout.basic">
-        <put-attribute name="body" value="/WEB-INF/views/user.jsp"/>
+    <definition name="user1" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/views/user1.jsp"/>
     </definition>
 
     <definition name="login" extends="layout.basic">
