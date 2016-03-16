@@ -11,11 +11,11 @@ import java.util.List;
  * @since 15.02.16
  */
 public interface ProductRepository {
-    public void saveProduct (Product product);
-    public Product findById (long id_prod);
-    public void updateProduct (Product product);
-    public void deleteProduct (long id_prod);
-    public List<Product> getAllProduct ();
-    public boolean isProductExist(long id_prod);
+    void saveProduct (Product product);
+    Product findById (long id_prod);
+    void updateProduct (Product product);
+    void deleteProduct (long id_prod);
+    List<Product> getAllProduct ();
+    boolean isProductExist(long id_prod);
 
 }

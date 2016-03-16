@@ -14,10 +14,10 @@ import java.util.List;
 
 
 public interface CategoryRepository {
-    public void saveCategory (Category category);
-    public Category findById (long id_category);
-    public void updateCategory (Category category);
-    public void deleteCategory (long id_category);
-    public List<Category> getAllCategory ();
-    public boolean isCategoryExist(long id_category);
+    void saveCategory (Category category);
+    Category findById (long id_category);
+    void updateCategory (Category category);
+    void deleteCategory (long id_category);
+    List<Category> getAllCategory ();
+    boolean isCategoryExist(long id_category);
 }

@@ -12,12 +12,13 @@ import java.util.List;
  */
 
 public interface UserRepository {
-    public void createUser (User user);
-    public void updateUser (User user);
-    public User findById (long id);
-    public User findByEmail (String email);
-    public List<User> getAllUsers ();
-    public void deleteById (long id);
-    public boolean isUserExist(long id);
+
+    void createUser (User user);
+    void updateUser (User user);
+    User findById (long id);
+    User findByEmail (String email);
+    List<User> getAllUsers ();
+    void deleteById (long id);
+    boolean isUserExist(long id);
 
 }

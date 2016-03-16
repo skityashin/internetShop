@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class Hello {
 
 
-    @RequestMapping(value = "/greeting", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String showMainPage() {
-        return "user";
+        return "start";
     }
 
 

@@ -13,11 +13,11 @@ import java.util.List;
 
 public interface MediaService {
 
-    public void saveMedia (Media media);
-    public Media findById (long id_media);
-    public void updateMedia (Media media);
-    public void deleteMedia (long id_media);
-    public List<Media> getAllMedia ();
-    public boolean isMediaExist(long id_media);
+    void saveMedia (Media media);
+    Media findById (long id_media);
+    void updateMedia (Media media);
+    void deleteMedia (long id_media);
+    List<Media> getAllMedia ();
+    boolean isMediaExist(long id_media);
 
 }
