@@ -49,7 +49,7 @@ public class UserRepositoryImpl implements UserRepository{
         query.setParameter("email", email);
         List<User> users = query.getResultList();
         if (!CollectionUtils.isEmpty(users)) {
-            return users.get(1);
+            return users.get(0);
         }
         return null;
     }

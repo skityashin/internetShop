@@ -26,7 +26,7 @@
 
 
     <div class="registration_common_block1">
-        <form action="/user/login" method="post">
+        <form action="/user/login" method="POST">
             <div class="rid-line1">
                 <label for="createEmail2" class="rid-line__label1 rid-line__label_wide1">
                     <div class="rid-line__label-line1">Email</div>
@@ -35,7 +35,7 @@
                 <div class="rid-line__content1">
                     <div class="rid-emailpick1">
                         <div class="rid-emailpick__name1">
-                            <input type="text" class="g-rid-input1" id="createEmail2" placeholder="Введите Email">
+                            <input type="text" class="g-rid-input1" value="" name= "email" id="createEmail2" placeholder="Введите Email">
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
 
                     <div class="rid-line__content1">
                         <div class="rid-line__input1 rid-line__input_profile-edit1 ">
-                            <input type="password" class="g-rid-input1 g-rid-input_password1" id="createPassword2">
+                            <input type="password" class="g-rid-input1 g-rid-input_password1"  value=""  name= "pass" id="createPassword2">
                             <span class="g-rid-input__eye1 g-rid-input__eye_grey1" id="createPassword11"></span>
                         </div>
                     </div>

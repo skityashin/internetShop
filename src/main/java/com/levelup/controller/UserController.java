@@ -30,13 +30,15 @@ public class UserController {
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginUser(@RequestBody UserDto userDto) {
+    public String loginUser(@ModelAttribute UserDto userDto) {
         if (userDto == null) {
             return "user1";
         }
-        
-
-        return "all_product";
+        User user = userService.findByEmail(userDto.getEmail());
+        if(user != null){
+            return "redirect:/product/getAll";
+        }
+        return "user1";
     }
 
 
