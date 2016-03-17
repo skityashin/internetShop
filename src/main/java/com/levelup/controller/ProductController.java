@@ -53,7 +53,7 @@ public class ProductController {
 
 
 
-    @RequestMapping(value = "/delete/{id_prod}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id_prod}", method = RequestMethod.POST)
     @ResponseBody
     @SuppressWarnings("unchecked")
     public ResponseEntity deleteProduct(@PathVariable long id_prod) {

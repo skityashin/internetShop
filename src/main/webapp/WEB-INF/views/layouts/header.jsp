@@ -13,14 +13,18 @@
     <h2>В интернет магазин</h2>
 
     <div id="search">
-        <form name="search-form" class="header-search1" method="get" action="/product/find/">
+        <%--<form  class="header-search1" method="GET" action="/product/find/"${product.id_prod}>--%>
+        <form  class="header-search1" method="GET" action="/product/find/" onsubmit="return q.value!=''" role="search">
             <div>
-                <input autocomplete="off" type="text" name="text" class="header-search-input-text1" placeholder="Поиск"
-                       value="" tabindex="1">
+                <%--<input autocomplete="off" type="text" class="header-search-input-text1" placeholder="Поиск"--%>
+                       <%--value="" tabindex="1" data-product-id="${product.id_prod}">--%>
+                <input autocomplete="off" type="text" class="header-search-input-text1" placeholder="Поиск"
+                       value="" tabindex="1" name="q" autocomplete="off">
             </div>
-				<span class="btn-link-green1">
-					<button name="search-button" class="btn-link-i1" type="submit">Найти</button>
-				</span>
+                <span class="btn-link-green1" >
+                    <%--<button class="btn-link-i1" type="submit">Найти</button> --%>
+                    <button class="btn-link-i1" type="submit">Найти</button>
+                </span>
         </form>
     </div>
 
