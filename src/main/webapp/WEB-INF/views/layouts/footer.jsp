@@ -9,7 +9,7 @@
         <a href="#">Админка</a> |
         <a href="/product/getAll">Продукт</a> |
         <a href="#">Кредит</a> |
-        <a href="#">Контакты</a>
+        <a  href="/product/getAll">Корзина</a>
     </div>
 
 

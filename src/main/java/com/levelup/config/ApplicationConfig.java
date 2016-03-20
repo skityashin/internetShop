@@ -30,13 +30,13 @@ public class ApplicationConfig {
     @Value("${PORT:8080}")
     private int port;
 
-    @Value("${MYSQL_URL}")
+//    @Value("${MYSQL_URL}")
     private String url;
 
-    @Value("${MYSQL_USERNAME}")
+//    @Value("${MYSQL_USERNAME}")
     private String username;
 
-    @Value("${MYSQL_PASSWORD}")
+//    @Value("${MYSQL_PASSWORD}")
     private String password;
 
     /**
@@ -80,12 +80,12 @@ public class ApplicationConfig {
     public DataSource makeDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl(url);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/internetshop");
-//        dataSource.setUsername("root");
-//        dataSource.setPassword("");
+//        dataSource.setUrl(url);
+//        dataSource.setUsername(username);
+//        dataSource.setPassword(password);
+        dataSource.setUrl("jdbc:mysql://localhost:3306/internetshop");
+        dataSource.setUsername("root");
+        dataSource.setPassword("");
         return dataSource;
     }
 }

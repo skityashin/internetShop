@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.swing.*;
 import java.util.List;
 
@@ -64,6 +65,17 @@ public class ProductController {
 
     @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
     public String findProduct(@PathVariable long id_prod, Model model) {
+        Product product = productService.findById(id_prod);
+        model.addAttribute("title", product.getTitle_prod());
+        model.addAttribute("price", product.getPrice());
+        model.addAttribute("description", product.getDescription());
+        return "one_product";
+    }
+    //header - search
+    @RequestMapping(value = "/write", method = RequestMethod.POST)
+    public String writeProduct(HttpServletRequest request, Model model) {
+        String temp = request.getParameter("search");
+        long id_prod = Long.parseLong(temp);
         Product product = productService.findById(id_prod);
         model.addAttribute("title", product.getTitle_prod());
         model.addAttribute("price", product.getPrice());

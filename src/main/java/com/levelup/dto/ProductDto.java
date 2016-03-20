@@ -4,6 +4,8 @@ package com.levelup.dto;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import java.math.BigDecimal;
+
 /**
  * Class {@link com.levelup.dto.ProductDto}
  *
@@ -17,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class ProductDto {
 
     private String title_prod;
-    private double price;
+    private BigDecimal price;
     private int quantity;
 
     public String getTitle_prod() {
@@ -28,11 +30,11 @@ public class ProductDto {
         this.title_prod = title_prod;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

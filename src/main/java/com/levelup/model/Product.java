@@ -2,6 +2,7 @@ package com.levelup.model;
 
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
  * Class {@link com.levelup.model.Product}
@@ -20,7 +21,7 @@ public class Product {
     private long id_prod;
     private String title_prod;
     private String description;
-    private double price;
+    private BigDecimal price;
     private int quantity;
     private Category category;
 
@@ -52,11 +53,11 @@ public class Product {
 
 
     @Column(name = "price")
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

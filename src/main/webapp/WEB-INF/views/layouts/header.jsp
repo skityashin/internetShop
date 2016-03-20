@@ -13,16 +13,13 @@
     <h2>В интернет магазин</h2>
 
     <div id="search">
-        <%--<form  class="header-search1" method="GET" action="/product/find/"${product.id_prod}>--%>
-        <form  class="header-search1" method="GET" action="/product/find/" onsubmit="return q.value!=''" role="search">
+
+        <form  class="header-search1" method="POST" action="/product/write" role="search">
             <div>
-                <%--<input autocomplete="off" type="text" class="header-search-input-text1" placeholder="Поиск"--%>
-                       <%--value="" tabindex="1" data-product-id="${product.id_prod}">--%>
                 <input autocomplete="off" type="text" class="header-search-input-text1" placeholder="Поиск"
-                       value="" tabindex="1" name="q" autocomplete="off">
+                       value="" tabindex="1" name="search" autocomplete="off">
             </div>
                 <span class="btn-link-green1" >
-                    <%--<button class="btn-link-i1" type="submit">Найти</button> --%>
                     <button class="btn-link-i1" type="submit">Найти</button>
                 </span>
         </form>
@@ -106,6 +103,6 @@
         <li><a href="#"><span></span>Админка</a></li>
         <li><a href="/product/find/{id_prod}"><span></span>Продукт</a></li>
         <li><a href="#"><span></span>Кредит</a></li>
-        <li><a href="#"><span></span>Контакты</a></li>
+        <li><a href="cart"  href="/product/getAll"><span></span>Корзина</a></li>
     </ul>
 </div>
