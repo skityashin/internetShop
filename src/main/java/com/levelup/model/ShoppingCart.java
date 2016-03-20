@@ -1,5 +1,7 @@
 package com.levelup.model;
 
+import java.util.List;
+
 /**
  * Class {@link ShoppingCart}
  *
@@ -9,6 +11,21 @@ package com.levelup.model;
  */
 
 public class ShoppingCart {
+    private ShoppingCartItem shoppingCartItem;
+
+    public ShoppingCart() {
+    }
+
+
+    public ShoppingCartItem getShoppingCartItem() {
+        return shoppingCartItem;
+    }
+
+    public void setShoppingCartItem(ShoppingCartItem shoppingCartItem) {
+        this.shoppingCartItem = shoppingCartItem;
+    }
+
+
 
 
 }
