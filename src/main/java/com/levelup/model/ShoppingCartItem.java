@@ -1,6 +1,5 @@
 package com.levelup.model;
 
-
 import java.math.BigDecimal;
 
 /**
@@ -14,6 +13,7 @@ import java.math.BigDecimal;
 public class ShoppingCartItem {
     private Product product;
     private Integer quantity;
+    private BigDecimal summa;
 
 
     public ShoppingCartItem() {
@@ -39,6 +39,7 @@ public class ShoppingCartItem {
 
 
     public BigDecimal calculateTotalCost(){
-        
+        BigDecimal summa = new BigDecimal(Integer.valueOf(product.getPrice().intValue()) * quantity);
+        return summa;
     }
 }
