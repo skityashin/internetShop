@@ -7,9 +7,9 @@
         Copyright © Skityashin;
         <a href="/product/getAll">Каталог</a> |
         <a href="#">Админка</a> |
-        <a href="/product/getAll">Продукт</a> |
+        <a href="/product/find/{id_prod}">Продукт</a> |
         <a href="#">Кредит</a> |
-        <a  href="/product/getAll">Корзина</a>
+        <a  href="/cart">Корзина</a>
     </div>
 
 

@@ -103,6 +103,6 @@
         <li><a href="#"><span></span>Админка</a></li>
         <li><a href="/product/find/{id_prod}"><span></span>Продукт</a></li>
         <li><a href="#"><span></span>Кредит</a></li>
-        <li><a href="cart"  href="/product/getAll"><span></span>Корзина</a></li>
+        <li><a href="/cart" ><span></span>Корзина</a></li>
     </ul>
 </div>
