@@ -1,5 +1,9 @@
 package com.levelup.model;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -11,7 +15,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @version 1.0
  * @since 20.03.16
  */
-
+@Component
+@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class ShoppingCart {
     private List<ShoppingCartItem> shoppingCartItem;
     private BigDecimal totalCost = BigDecimal.valueOf(0);
@@ -45,28 +50,32 @@ public class ShoppingCart {
         this.totalAmount = totalAmount;
     }
 
-    public void addItem(ShoppingCartItem items){
-        for (ShoppingCartItem item: shoppingCartItem) {
-            if (item.getProduct().equals(items)){
-                item.setQuantity(item.getQuantity() + items.getQuantity());
+    public void addItem(ShoppingCartItem item){
+        boolean isExist = false;
+        for(ShoppingCartItem it: shoppingCartItem){
+            if(it.getProduct().equals(item.getProduct())){
+                it.setQuantity(it.getQuantity() + item.getQuantity());
+                isExist = true;
+                break;
+            }
+            if(!isExist) {
+                shoppingCartItem.add(item);
             }
         }
         recalcTotalCostAndAmount();
     }
 
-    public void removeItem(ShoppingCartItem items){
-        shoppingCartItem.remove(items);
+    public void removeItem(ShoppingCartItem item){
+        shoppingCartItem.remove(item);
         recalcTotalCostAndAmount();
     }
 
     public void recalcTotalCostAndAmount(){
-        for (ShoppingCartItem item: shoppingCartItem) {
+        for (ShoppingCartItem item : shoppingCartItem) {
             totalCost = totalCost.add(item.calculateTotalCost());
+            totalCost.setScale(2, BigDecimal.ROUND_CEILING);
             totalAmount += item.getQuantity();
         }
-
-
     }
-
 
 }

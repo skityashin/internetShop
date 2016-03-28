@@ -17,6 +17,8 @@
     </table>
 </c:forEach>
 
+
+
 <c:forEach var="cart" items="${totalCost}">
     <table border="0">
         <tr>
