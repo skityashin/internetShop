@@ -5,8 +5,10 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="false" %>
-<script  type="text/javascript" src="/resources/js/shoppingCart.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script language="javascript"  type="text/javascript" src="/resources/js/shoppingCart.js"></script>
+
 <c:forEach var="product" items="${products}">
     <table border="0">
         <tr>

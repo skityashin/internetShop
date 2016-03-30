@@ -45,15 +45,14 @@ public class ShoppingCartController {
     @RequestMapping(value = "/product/{id_prod}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public ResponseEntity showCart(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
-        System.out.println("VVVVVVVV");
         Product productCart = productService.findById(id_prod);
         ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
         shoppingCartItem.setQuantity(3);
         shoppingCartItem.setProduct(productCart);
 
+        ShoppingCart cart;
         httpSession = httpServletRequest.getSession(true);
-        httpSession.setAttribute("cart", shoppingCartItem);
-        ShoppingCart cart = (ShoppingCart) httpSession.getAttribute("cart");
+        cart = (ShoppingCart) httpSession.getAttribute("cart");
 //        if (cart != null) {
 //            cart.addItem(shoppingCartItem);
 //            httpSession.setAttribute("cart", cart);
