@@ -1,7 +1,12 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page session="false" %>
 <script  type="text/javascript" src="/resources/js/shoppingCart.js"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <c:forEach var="product" items="${products}">
     <table border="0">
         <tr>
@@ -32,11 +37,33 @@
 </p>
 <table border="0">
     <tr>
-        <td>TotalCost: ${totalCost}</td>
+        <td id="totalCost">TotalCost: ${totalCost}</td>
     </tr>
     <tr>
-        <td>TotalAmount: ${totalAmount}</td>
+        <td id="totalAmount">TotalAmount: ${totalAmount}</td>
     </tr>
 </table>
+
+<%--<script>--%>
+    <%--$('#cart_btn').on("click", function(event){--%>
+        <%--alert("AAAA");--%>
+        <%--var id_prod = $(this).data('product-id');--%>
+        <%--alert(id_prod);--%>
+        <%--$.ajax({--%>
+            <%--url: "/cart/product/" + id_prod,--%>
+            <%--dataType: 'JSON',--%>
+            <%--type: 'GET',--%>
+            <%--success: function(response){--%>
+                <%--$('#totalCost').html(response.totalCost);--%>
+                <%--$('#totalAmount').html(response.totalAmount);--%>
+
+
+                <%--alert( "Всего добавлено товаров: " + totalAmount + "На сумму: " + totalAmount);--%>
+
+            <%--}--%>
+        <%--});--%>
+
+    <%--});--%>
+<%--</script>--%>
 
 

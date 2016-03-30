@@ -38,16 +38,19 @@ public class ShoppingCartController {
 
     @Autowired
     private HttpSession httpSession;
+    @Autowired
     private ProductService productService;
 
 
     @RequestMapping(value = "/product/{id_prod}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public ResponseEntity showCart(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
+        System.out.println("VVVVVVVV");
         Product productCart = productService.findById(id_prod);
         ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
-        shoppingCartItem.setQuantity(productCart.getQuantity());
+        shoppingCartItem.setQuantity(3);
         shoppingCartItem.setProduct(productCart);
+
         httpSession = httpServletRequest.getSession(true);
         httpSession.setAttribute("cart", shoppingCartItem);
         ShoppingCart cart = (ShoppingCart) httpSession.getAttribute("cart");
