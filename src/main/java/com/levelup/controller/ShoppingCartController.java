@@ -48,41 +48,26 @@ public class ShoppingCartController {
         ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
         shoppingCartItem.setQuantity(productCart.getQuantity());
         shoppingCartItem.setProduct(productCart);
-       httpSession = httpServletRequest.getSession(true);
+        httpSession = httpServletRequest.getSession(true);
         httpSession.setAttribute("cart", shoppingCartItem);
         ShoppingCart cart = (ShoppingCart) httpSession.getAttribute("cart");
-        if (cart != null) {
+//        if (cart != null) {
+//            cart.addItem(shoppingCartItem);
+//            httpSession.setAttribute("cart", cart);
+////            cart = (ShoppingCart) httpSession.getAttribute("cart");
+//        } else {
+//            cart = new ShoppingCart();
+//        }
+        if (cart == null) {
+            cart = new ShoppingCart();
             cart.addItem(shoppingCartItem);
             httpSession.setAttribute("cart", cart);
-//            cart = (ShoppingCart) httpSession.getAttribute("cart");
         } else {
-            cart = new ShoppingCart();
+            cart.addItem(shoppingCartItem);
+            httpSession.setAttribute("cart", cart);
         }
-
-
-//        Integer totalAmount = (Integer)session.getValue("tracker.count");
-//        if (count == null)
-//            count = new Integer(1);
-//        else
-//            count = new Integer(count.intValue() + 1);
-//        session.putValue("tracker.count", count);
-//
-//
-//        BigDecimal totalCost = new BigDecimal(httpServletRequest.getParameter("totalCost"));
-//        Integer totalAmount = new Integer(httpServletRequest.getParameter("totalAmount"));
-//        ShoppingCartItem sci = new ShoppingCartItem("cart", totalCost, totalAmount);
-//        shoppingCartItem.add(sci);
-
-
-
+        model.addAttribute("totalAmount", cart.getTotalAmount());
+        model.addAttribute("totalCost",  cart.getTotalCost());
         return new ResponseEntity(model, HttpStatus.OK);
     }
-
-    //        List<Product> products = productService.getAllProduct();
-//        model.addAttribute("products", products);
-//        model.addAttribute("totalAmount", shoppingCart.getTotalAmount());
-//        model.addAttribute("totalCost",  shoppingCart.getTotalCost());
-//        "shopping_cart";
-
-
 }

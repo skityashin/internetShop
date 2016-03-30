@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script  type="text/javascript" src="/resources/js/shoppingCart.js"></script>
 
 <c:forEach var="product" items="${products}">
     <table border="0">
