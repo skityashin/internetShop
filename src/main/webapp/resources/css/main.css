@@ -103,7 +103,8 @@ li {
     clear: left;
 }
 #footer {
-    margin: 10px 0 10px 0;
+    margin: 30px 0 10px 0;
+    margin-top: 280px;
     padding: 5px 0;
     text-align: center;
     border-top: 1px solid gray;

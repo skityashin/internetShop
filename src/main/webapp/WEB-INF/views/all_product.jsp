@@ -7,7 +7,9 @@
 <%@ page session="false" %>
 
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-<script language="javascript"  type="text/javascript" src="/resources/js/shoppingCart.js"></script>
+<script language="javascript" type="text/javascript" src="/resources/js/shoppingCart.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/css/shoppingCart.css">
+
 
 <c:forEach var="product" items="${products}">
     <table border="0">
@@ -32,40 +34,43 @@
         </tr>
     </table>
 </c:forEach>
-<div>---------------------------------------------------------------------------------</div>
-<div>shoppingCart</div>
-<p><a href="cart"><img src="http://www.linestyle.com.ua/ru/images/car.png"
-                             width="149" height="110" alt="cart"></a>
-</p>
-<table border="0">
-    <tr>
-        <td id="totalCost">TotalCost: ${totalCost}</td>
-    </tr>
-    <tr>
-        <td id="totalAmount">TotalAmount: ${totalAmount}</td>
-    </tr>
-</table>
+
+<div id="shoppingCart">shoppingCart
+    <p><a href="cart"><img src="http://www.linestyle.com.ua/ru/images/car.png"
+                           width="149" height="110" alt="cart"></a>
+    </p>
+    <table id="shoppingCart1" border="0">
+        <tr>
+            <td>TotalCost:</td>
+            <td id="totalCost">${totalCost}</td>
+        </tr>
+        <tr>
+            <td>TotalAmount:</td>
+            <td id="totalAmount">${totalAmount}</td>
+        </tr>
+    </table>
+</div>
 
 <%--<script>--%>
-    <%--$('#cart_btn').on("click", function(event){--%>
-        <%--alert("AAAA");--%>
-        <%--var id_prod = $(this).data('product-id');--%>
-        <%--alert(id_prod);--%>
-        <%--$.ajax({--%>
-            <%--url: "/cart/product/" + id_prod,--%>
-            <%--dataType: 'JSON',--%>
-            <%--type: 'GET',--%>
-            <%--success: function(response){--%>
-                <%--$('#totalCost').html(response.totalCost);--%>
-                <%--$('#totalAmount').html(response.totalAmount);--%>
+<%--$('#cart_btn').on("click", function(event){--%>
+<%--alert("AAAA");--%>
+<%--var id_prod = $(this).data('product-id');--%>
+<%--alert(id_prod);--%>
+<%--$.ajax({--%>
+<%--url: "/cart/product/" + id_prod,--%>
+<%--dataType: 'JSON',--%>
+<%--type: 'GET',--%>
+<%--success: function(response){--%>
+<%--$('#totalCost').html(response.totalCost);--%>
+<%--$('#totalAmount').html(response.totalAmount);--%>
 
 
-                <%--alert( "Всего добавлено товаров: " + totalAmount + "На сумму: " + totalAmount);--%>
+<%--alert( "Всего добавлено товаров: " + totalAmount + "На сумму: " + totalAmount);--%>
 
-            <%--}--%>
-        <%--});--%>
+<%--}--%>
+<%--});--%>
 
-    <%--});--%>
+<%--});--%>
 <%--</script>--%>
 
 

@@ -45,21 +45,16 @@ public class ShoppingCartController {
     @RequestMapping(value = "/product/{id_prod}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public ResponseEntity showCart(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
+
         Product productCart = productService.findById(id_prod);
         ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
-        shoppingCartItem.setQuantity(3);
+        shoppingCartItem.setQuantity(1);
         shoppingCartItem.setProduct(productCart);
 
         ShoppingCart cart;
         httpSession = httpServletRequest.getSession(true);
         cart = (ShoppingCart) httpSession.getAttribute("cart");
-//        if (cart != null) {
-//            cart.addItem(shoppingCartItem);
-//            httpSession.setAttribute("cart", cart);
-////            cart = (ShoppingCart) httpSession.getAttribute("cart");
-//        } else {
-//            cart = new ShoppingCart();
-//        }
+
         if (cart == null) {
             cart = new ShoppingCart();
             cart.addItem(shoppingCartItem);
@@ -70,6 +65,7 @@ public class ShoppingCartController {
         }
         model.addAttribute("totalAmount", cart.getTotalAmount());
         model.addAttribute("totalCost",  cart.getTotalCost());
+
         return new ResponseEntity(model, HttpStatus.OK);
     }
 }

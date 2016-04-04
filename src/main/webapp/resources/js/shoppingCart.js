@@ -7,12 +7,10 @@ $(document).ready(function(){
             dataType: 'JSON',
             type: 'GET',
             success: function(response){
-                // $('#totalCost').html(response.totalCost);
-                // $('#totalAmount').html(response.totalAmount);
-                $('#totalCost').val(response.totalAmount);
-                $('#totalAmount').val(response.totalAmount);
-                
-                alert( "Всего добавлено товаров: " + totalAmount + "На сумму: " + totalAmount);
+                $('#totalCost').html(response.totalCost);
+                $('#totalAmount').html(response.totalAmount);
+
+                alert( "Всего добавлено товаров: " + response.totalAmount + "   На сумму: " + response.totalCost);
 
             }
         });

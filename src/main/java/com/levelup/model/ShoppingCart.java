@@ -53,14 +53,14 @@ public class ShoppingCart {
     public void addItem(ShoppingCartItem item){
         boolean isExist = false;
         for(ShoppingCartItem it: shoppingCartItem){
-            if(it.getProduct().equals(item.getProduct())){
+            if(it.getProduct().getTitle_prod().equals(item.getProduct().getTitle_prod())){
                 it.setQuantity(it.getQuantity() + item.getQuantity());
                 isExist = true;
                 break;
             }
-            if(!isExist) {
-                shoppingCartItem.add(item);
-            }
+        }
+        if(!isExist) {
+            shoppingCartItem.add(item);
         }
         recalcTotalCostAndAmount();
     }
@@ -71,6 +71,8 @@ public class ShoppingCart {
     }
 
     public void recalcTotalCostAndAmount(){
+        totalAmount  = 0;
+        totalCost = new BigDecimal(0);
         for (ShoppingCartItem item : shoppingCartItem) {
             totalCost = totalCost.add(item.calculateTotalCost());
             totalCost.setScale(2, BigDecimal.ROUND_CEILING);

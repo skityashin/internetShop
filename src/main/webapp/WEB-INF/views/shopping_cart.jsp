@@ -22,7 +22,8 @@
 <c:forEach var="cart" items="${totalCost}">
     <table border="0">
         <tr>
-            <td>TotalCost: ${totalCost}</td>
+            <td>TotalCost:</td>
+            <td id="totalCost">${totalCost}</td>
         </tr>
     </table>
 </c:forEach>
@@ -30,7 +31,8 @@
 <c:forEach var="cart" items="${totalAmount}">
     <table border="0">
         <tr>
-            <td>TotalAmount: ${totalAmount}</td>
+            <td>TotalAmount:</td>
+            <td id="totalAmount">${totalAmount}</td>
         </tr>
     </table>
 </c:forEach>

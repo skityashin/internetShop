@@ -24,6 +24,7 @@ public class ShoppingCartItem {
 
 
     public ShoppingCartItem() {
+        quantity = new Integer(0);
     }
 
 
