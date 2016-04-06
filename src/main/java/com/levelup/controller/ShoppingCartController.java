@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -68,4 +69,47 @@ public class ShoppingCartController {
 
         return new ResponseEntity(model, HttpStatus.OK);
     }
+
+
+    @RequestMapping(value = "/checkout", method = RequestMethod.GET)
+    public String checkout(Model model, HttpServletRequest httpServletRequest) {
+
+        ShoppingCart cart;
+        httpSession = httpServletRequest.getSession(true);
+        cart = (ShoppingCart) httpSession.getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
+        }
+        model.addAttribute("items", cart.getShoppingCartItem());
+        model.addAttribute("totalAmount", cart.getTotalAmount());
+        model.addAttribute("totalCost",  cart.getTotalCost());
+        return "shopping_cart";
+    }
+
+    @RequestMapping(value = "/{id_prod}", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public ResponseEntity remove(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
+
+        ShoppingCart cart;
+        httpSession = httpServletRequest.getSession(true);
+        cart = (ShoppingCart) httpSession.getAttribute("cart");
+        Product productCart = productService.findById(id_prod);
+
+        List<ShoppingCartItem> carts = cart.getShoppingCartItem();
+        Iterator<ShoppingCartItem> iter = carts.iterator();
+        while (iter.hasNext()) {
+            ShoppingCartItem item = iter.next();
+            if (item.getProduct().getId_prod() ==productCart.getId_prod()) {
+//                iter.remove();
+                cart.removeItem(item);
+                httpSession.setAttribute("cart", cart);
+            }
+        }
+
+        model.addAttribute("items", cart.getShoppingCartItem());
+        model.addAttribute("totalAmount", cart.getTotalAmount());
+        model.addAttribute("totalCost",  cart.getTotalCost());
+        return new ResponseEntity(model, HttpStatus.OK);
+    }
+
 }
