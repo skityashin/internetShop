@@ -28,7 +28,7 @@
         <tr>
             <td>
                 <input id="quantity" type="input" size="3" name="quantity[${item.product.id_prod}]" value="${item.quantity}"/>
-                <input type="button" class="btn" value="Dell" data-product-id="${item.product.id_prod}">
+                <input type="button" class="delete" value="Del" data-product-id="${item.product.id_prod}">
             </td>
         </tr>
     </table>

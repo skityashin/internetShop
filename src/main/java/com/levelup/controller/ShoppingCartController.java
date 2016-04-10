@@ -86,10 +86,10 @@ public class ShoppingCartController {
         return "shopping_cart";
     }
 
-    @RequestMapping(value = "/{id_prod}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/{id_prod}", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
-    public ResponseEntity remove(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
-
+    public ResponseEntity<ShoppingCartItem> remove(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
+        System.out.println("DDDD");
         ShoppingCart cart;
         httpSession = httpServletRequest.getSession(true);
         cart = (ShoppingCart) httpSession.getAttribute("cart");
@@ -100,15 +100,13 @@ public class ShoppingCartController {
         while (iter.hasNext()) {
             ShoppingCartItem item = iter.next();
             if (item.getProduct().getId_prod() ==productCart.getId_prod()) {
-//                iter.remove();
                 cart.removeItem(item);
-                httpSession.setAttribute("cart", cart);
             }
         }
-
+        httpSession.setAttribute("cart", cart);
         model.addAttribute("items", cart.getShoppingCartItem());
-        model.addAttribute("totalAmount", cart.getTotalAmount());
-        model.addAttribute("totalCost",  cart.getTotalCost());
+//        model.addAttribute("totalAmount", cart.getTotalAmount());
+//        model.addAttribute("totalCost",  cart.getTotalCost());
         return new ResponseEntity(model, HttpStatus.OK);
     }
 
