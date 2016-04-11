@@ -1,25 +1,27 @@
 $(document).ready(function(){
 
-    $('.delete').on("click",function(){
-        alert("GGGG");
+    $('.delete').click(function(){
+
         var id_prod = $(this).data('product-id');
         $.ajax({
-
             url: '/cart/' + id_prod,
             // dataType: 'JSON',
             type: 'POST',
             success: function(){
-               document.location.reload();
+               location.reload();
                 // $('#totalCost').html(response.totalCost);
                 // $('#totalAmount').html(response.totalAmount);
-
-                // alert( "NEW");
-
             }
         });
-
+        // $.ajax({
+        //     url: '/cart/checkout',
+        //     // dataType: 'JSON',
+        //     type: 'POST',
+        //     success: function(){
+        //         location.reload();
+        //     }
+        // });
 
     });
-
 
 });

@@ -20,7 +20,9 @@ public class ProductDto {
 
     private String title_prod;
     private BigDecimal price;
+    private String description;
     private int quantity;
+//    private String category;
 
     public String getTitle_prod() {
         return title_prod;
@@ -44,5 +46,13 @@ public class ProductDto {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

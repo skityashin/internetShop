@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -45,7 +46,7 @@ public class ShoppingCartController {
 
     @RequestMapping(value = "/product/{id_prod}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public ResponseEntity showCart(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
+    public ResponseEntity addCart(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
 
         Product productCart = productService.findById(id_prod);
         ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
@@ -87,9 +88,9 @@ public class ShoppingCartController {
     }
 
     @RequestMapping(value = "/{id_prod}", method = RequestMethod.POST, produces = "application/json")
-    @ResponseBody
-    public ResponseEntity<ShoppingCartItem> remove(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
-        System.out.println("DDDD");
+
+    public ModelAndView remove(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
+
         ShoppingCart cart;
         httpSession = httpServletRequest.getSession(true);
         cart = (ShoppingCart) httpSession.getAttribute("cart");
@@ -107,7 +108,7 @@ public class ShoppingCartController {
         model.addAttribute("items", cart.getShoppingCartItem());
 //        model.addAttribute("totalAmount", cart.getTotalAmount());
 //        model.addAttribute("totalCost",  cart.getTotalCost());
-        return new ResponseEntity(model, HttpStatus.OK);
+        return new ModelAndView("redirect:checkout");
     }
 
 }

@@ -1,7 +1,10 @@
 package com.levelup.controller;
 
+import com.levelup.dto.CategoryDto;
 import com.levelup.dto.ProductDto;
+import com.levelup.model.Category;
 import com.levelup.model.Product;
+import com.levelup.service.CategoryService;
 import com.levelup.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +33,8 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+    @Autowired
+    private CategoryService categoryService;
 
     @RequestMapping(method = RequestMethod.GET, value =  "/add")
     public String showForm(){
@@ -37,18 +42,30 @@ public class ProductController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/add")
-    public String showResult(@ModelAttribute ProductDto productDto, Model model){
+    public String showResult(@ModelAttribute ProductDto productDto, @ModelAttribute CategoryDto categoryDto, Model model){
         if(productDto == null) {
             return "add_product";
         }
+//        Category category = new Category();
+        Category category = categoryService.findByTitle(categoryDto.getTitle_category());
+
+        category.setTitle_category(categoryDto.getTitle_category());
         Product product = new Product();
+
         product.setTitle_prod(productDto.getTitle_prod());
         product.setQuantity(productDto.getQuantity());
         product.setPrice(productDto.getPrice());
+        product.setDescription(productDto.getDescription());
+        product.setCategory(category);
+
         productService.saveProduct(product);
         model.addAttribute("title", product.getTitle_prod());
-        model.addAttribute("price", product.getPrice());
+        model.addAttribute("id_prod", product.getId_prod());
         model.addAttribute("description", product.getDescription());
+        model.addAttribute("price", product.getPrice());
+        model.addAttribute("quantity", product.getQuantity());
+        model.addAttribute("category", product.getCategory());
+
         return "one_product";
     }
 

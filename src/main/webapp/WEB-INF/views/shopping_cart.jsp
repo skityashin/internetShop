@@ -26,6 +26,10 @@
             <td>${item.product.description}</td>
         </tr>
         <tr>
+            <td rowspan="4"><img height="85" width="128" src="/resources/images/${item.product.id_prod}.jpg"></td>
+        </tr>
+
+        <tr>
             <td>
                 <input id="quantity" type="input" size="3" name="quantity[${item.product.id_prod}]" value="${item.quantity}"/>
                 <input type="button" class="delete" value="Del" data-product-id="${item.product.id_prod}">

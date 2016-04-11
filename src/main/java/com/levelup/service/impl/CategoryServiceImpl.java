@@ -55,6 +55,10 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.isCategoryExist(id_category);
     }
 
+    @Override
+    public Category findByTitle(String title_category) {
+        return categoryRepository.findByTitle(title_category);
+    }
 }
 
 

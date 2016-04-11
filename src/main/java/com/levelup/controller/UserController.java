@@ -1,6 +1,7 @@
 package com.levelup.controller;
 
 import com.levelup.dto.UserDto;
+import com.levelup.model.Role;
 import com.levelup.model.User;
 import com.levelup.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static com.levelup.model.Role.CUSTOMER;
 
 /**
  * Class {@link com.levelup.controller.UserController}
@@ -36,7 +39,11 @@ public class UserController {
         }
         User user = userService.findByEmail(userDto.getEmail());
         if(user != null){
-            return "redirect:/product/getAll";
+            if(user.getRole().equals(Role.CUSTOMER)){
+                return "redirect:/product/getAll";
+            }else {
+                return "redirect:/product/add";
+            }
         }
         return "user1";
     }

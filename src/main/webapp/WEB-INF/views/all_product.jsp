@@ -10,11 +10,25 @@
 <script language="javascript" type="text/javascript" src="/resources/js/shoppingCart.js"></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/shoppingCart.css">
 
-
+<div id="shoppingCart">shoppingCart
+    <p><a href="cart"><img src="http://www.linestyle.com.ua/ru/images/car.png"
+                           width="149" height="110" alt="cart"></a>
+    </p>
+    <table id="shoppingCart1" border="0">
+        <tr>
+            <td>TotalCost:</td>
+            <td id="totalCost">${totalCost}</td>
+        </tr>
+        <tr>
+            <td>TotalAmount:</td>
+            <td id="totalAmount">${totalAmount}</td>
+        </tr>
+    </table>
+</div>
 <c:forEach var="product" items="${products}">
     <table border="0">
         <tr>
-                <%--<td rowspan="4"><img src="/resources/image/tehnika.resized.jpg"></td>--%>
+            <td rowspan="4"><img height="85" width="128" src="/resources/images/${product.id_prod}.jpg"></td>
             <td>${product.title_prod}</td>
         </tr>
         <tr>
@@ -35,21 +49,7 @@
     </table>
 </c:forEach>
 
-<div id="shoppingCart">shoppingCart
-    <p><a href="cart"><img src="http://www.linestyle.com.ua/ru/images/car.png"
-                           width="149" height="110" alt="cart"></a>
-    </p>
-    <table id="shoppingCart1" border="0">
-        <tr>
-            <td>TotalCost:</td>
-            <td id="totalCost">${totalCost}</td>
-        </tr>
-        <tr>
-            <td>TotalAmount:</td>
-            <td id="totalAmount">${totalAmount}</td>
-        </tr>
-    </table>
-</div>
+
 
 <%--<script>--%>
 <%--$('#cart_btn').on("click", function(event){--%>

@@ -17,6 +17,7 @@ public interface CategoryService {
     Category findById (long id_category);
     void updateCategory (Category category);
     void deleteCategory (long id_category);
+    Category findByTitle (String title_category);
     List<Category> getAllCategory ();
     boolean isCategoryExist(long id_category);
 }

@@ -3,6 +3,7 @@ package com.levelup.repository.impl;
 import com.levelup.model.Category;
 import com.levelup.repository.CategoryRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -59,5 +60,14 @@ public class CategoryRepositoryImpl implements CategoryRepository{
         return entityManager.contains( id_category);
     }
 
-
+    @Override
+    public Category findByTitle(String title_category) {
+        Query query = entityManager.createQuery("SELECT c FROM Category c WHERE c.title_category = :title_category");
+        query.setParameter("title_category", title_category);
+        List<Category> category = query.getResultList();
+        if (!CollectionUtils.isEmpty(category)) {
+            return category.get(0);
+        }
+        return null;
+    }
 }
