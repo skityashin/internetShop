@@ -50,7 +50,13 @@ public class ProductRepositoryImpl implements ProductRepository{
 
     @Override
     public List<Product> getAllProduct() {
-        Query query = entityManager.createQuery("FROM Product");
+        Query query = entityManager.createQuery("FROM Product ORDER BY title_prod");
+        return (List<Product>)query.getResultList();
+    }
+
+    @Override
+    public List<Product> getAllProduct1() {
+        Query query = entityManager.createQuery("FROM Product ORDER BY price");
         return (List<Product>)query.getResultList();
     }
 

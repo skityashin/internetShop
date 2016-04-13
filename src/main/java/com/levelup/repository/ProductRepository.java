@@ -16,6 +16,7 @@ public interface ProductRepository {
     void updateProduct (Product product);
     void deleteProduct (long id_prod);
     List<Product> getAllProduct ();
+    List<Product> getAllProduct1 ();
     boolean isProductExist(long id_prod);
 
 }

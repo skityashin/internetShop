@@ -10,10 +10,12 @@
         <tr>
             <td>TotalCost:</td>
             <td id="totalCost">${totalCost}</td>
+            <td>гривен</td>
         </tr>
         <tr>
             <td>TotalAmount:</td>
             <td id="totalAmount">${totalAmount}</td>
+            <td>шт</td>
         </tr>
     </table>
 </div>

@@ -8,7 +8,9 @@
 
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script language="javascript" type="text/javascript" src="/resources/js/shoppingCart.js"></script>
+<script language="javascript" type="text/javascript" src="/resources/js/select.js"></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/shoppingCart.css">
+
 
 <div id="shoppingCart">shoppingCart
     <p><a href="cart"><img src="http://www.linestyle.com.ua/ru/images/car.png"
@@ -18,13 +20,36 @@
         <tr>
             <td>TotalCost:</td>
             <td id="totalCost">${totalCost}</td>
+            <td>гривен</td>
         </tr>
         <tr>
             <td>TotalAmount:</td>
             <td id="totalAmount">${totalAmount}</td>
+            <td>шт</td>
         </tr>
     </table>
 </div>
+
+
+<%--<div>--%>
+<%--Отсортировать:--%>
+<%--<select onchange="val()" id="select_id">--%>
+<%--<option selected value="0">по названию</option>--%>
+<%--<option value="1">цена(увеличение)</option>--%>
+<%--<option value="2">цена(уменьшение)</option>--%>
+<%--</select>--%>
+<%--</div>--%>
+
+<div id="sort_view">
+    <span>Сортировка</span>
+    <select onchange="location = this.value;" id="select_id">
+        <option  value="/product/getAll">по названию</option>
+        <option  value="/product/getAll1">цена(увеличение)</option>
+        <option  value="/product/getAll2">цена(уменьшение)</option>
+    </select>
+</div>
+
+
 <c:forEach var="product" items="${products}">
     <table border="0">
         <tr>
@@ -48,7 +73,6 @@
         </tr>
     </table>
 </c:forEach>
-
 
 
 <%--<script>--%>
