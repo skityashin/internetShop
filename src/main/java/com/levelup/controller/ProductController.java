@@ -102,6 +102,9 @@ public class ProductController {
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public String getAllProducts(Model model) {
+
+
+
         List<Product> products = productService.getAllProduct();
             model.addAttribute("products", products);
         return "all_product";

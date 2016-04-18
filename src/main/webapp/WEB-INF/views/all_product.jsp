@@ -42,10 +42,11 @@
 
 <div id="sort_view">
     <span>Сортировка</span>
-    <select onchange="location = this.value;" id="select_id">
-        <option  value="/product/getAll">по названию</option>
-        <option  value="/product/getAll1">цена(увеличение)</option>
-        <option  value="/product/getAll2">цена(уменьшение)</option>
+    <select class="select_id" onchange="val()"  id="select_id">
+    <%--<select onchange="location = this.value;" id="select_id">--%>
+        <option  value="">по названию</option>
+        <option  value="1">цена(увеличение)</option>
+        <option  value="2">цена(уменьшение)</option>
     </select>
 </div>
 
