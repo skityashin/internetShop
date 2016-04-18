@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="/resources/css/shoppingCart.css">
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script language="javascript" type="text/javascript" src="/resources/js/shoppingCart.js"></script>
 
 
 <div id="shoppingCart">shoppingCart

@@ -59,7 +59,11 @@ public class ProductRepositoryImpl implements ProductRepository{
         Query query = entityManager.createQuery("FROM Product ORDER BY price");
         return (List<Product>)query.getResultList();
     }
-
+//    @Override
+//    public List<Product> getAllProduct2() {
+//        Query query = entityManager.createQuery("FROM Product ORDER BY price DESC");
+//        return (List<Product>)query.getResultList();
+//    }
     @Override
     public boolean isProductExist(long id_prod) {
         return entityManager.contains(id_prod);

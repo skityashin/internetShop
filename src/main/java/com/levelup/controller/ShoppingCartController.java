@@ -87,6 +87,21 @@ public class ShoppingCartController {
         return "shopping_cart";
     }
 
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<ShoppingCart> info(Model model, HttpServletRequest httpServletRequest) {
+
+        ShoppingCart cart;
+        httpSession = httpServletRequest.getSession(true);
+        cart = (ShoppingCart) httpSession.getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
+        }
+        model.addAttribute("totalAmount", cart.getTotalAmount());
+        model.addAttribute("totalCost",  cart.getTotalCost());
+        return new ResponseEntity(model, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/{id_prod}", method = RequestMethod.POST, produces = "application/json")
 
     public ModelAndView remove(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {

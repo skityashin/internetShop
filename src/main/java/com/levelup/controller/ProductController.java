@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.*;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -100,26 +102,31 @@ public class ProductController {
         return "one_product";
     }
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = "application/json")
     public String getAllProducts(Model model) {
-
-
-
         List<Product> products = productService.getAllProduct();
-            model.addAttribute("products", products);
+        model.addAttribute("products", products);
         return "all_product";
     }
 
-    @RequestMapping(value = "/getAll1", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll0", method = RequestMethod.GET, produces = "application/json")
+    public String getAllProducts0(Model model) {
+        List<Product> products = productService.getAllProduct();
+        model.addAttribute("products", products);
+        return "all_product";
+    }
+
+    @RequestMapping(value = "/getAll1", method = RequestMethod.GET, produces = "application/json")
     public String getAllProducts1(Model model) {
         List<Product> products = productService.getAllProduct1();
         model.addAttribute("products", products);
         return "all_product";
     }
 
-    @RequestMapping(value = "/getAll2", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll2", method = RequestMethod.GET, produces = "application/json")
     public String getAllProducts2(Model model) {
-        List<Product> products = productService.getAllProduct();
+        List<Product> products = productService.getAllProduct1();
+        Collections.reverse(products);
         model.addAttribute("products", products);
         return "all_product";
     }

@@ -44,7 +44,7 @@
     <span>Сортировка</span>
     <select class="select_id" onchange="val()"  id="select_id">
     <%--<select onchange="location = this.value;" id="select_id">--%>
-        <option  value="">по названию</option>
+        <option  value="0">по названию</option>
         <option  value="1">цена(увеличение)</option>
         <option  value="2">цена(уменьшение)</option>
     </select>
@@ -52,7 +52,7 @@
 
 
 <c:forEach var="product" items="${products}">
-    <table border="0">
+    <table id="ttt" border="0">
         <tr>
             <td rowspan="4"><img height="85" width="128" src="/resources/images/${product.id_prod}.jpg"></td>
             <td>${product.title_prod}</td>
