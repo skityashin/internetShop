@@ -11,12 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.*;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -38,17 +34,16 @@ public class ProductController {
     @Autowired
     private CategoryService categoryService;
 
-    @RequestMapping(method = RequestMethod.GET, value =  "/add")
-    public String showForm(){
+    @RequestMapping(method = RequestMethod.GET, value = "/add")
+    public String showForm() {
         return "add_product";
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/add")
-    public String showResult(@ModelAttribute ProductDto productDto, @ModelAttribute CategoryDto categoryDto, Model model){
-        if(productDto == null) {
+    public String showResult(@ModelAttribute ProductDto productDto, @ModelAttribute CategoryDto categoryDto, Model model) {
+        if (productDto == null) {
             return "add_product";
         }
-//        Category category = new Category();
         Category category = categoryService.findByTitle(categoryDto.getTitle_category());
 
         category.setTitle_category(categoryDto.getTitle_category());
@@ -71,16 +66,13 @@ public class ProductController {
         return "one_product";
     }
 
-
-
     @RequestMapping(value = "/delete/{id_prod}", method = RequestMethod.POST)
     @ResponseBody
     @SuppressWarnings("unchecked")
     public ResponseEntity deleteProduct(@PathVariable long id_prod) {
         productService.deleteProduct(id_prod);
-        return  new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.OK);
     }
-
 
     @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
     public String findProduct(@PathVariable long id_prod, Model model) {
@@ -88,8 +80,10 @@ public class ProductController {
         model.addAttribute("title", product.getTitle_prod());
         model.addAttribute("price", product.getPrice());
         model.addAttribute("description", product.getDescription());
+        model.addAttribute("id_prod", product.getId_prod());
         return "one_product";
     }
+
     //header - search
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public String writeProduct(HttpServletRequest request, Model model) {
@@ -99,6 +93,7 @@ public class ProductController {
         model.addAttribute("title", product.getTitle_prod());
         model.addAttribute("price", product.getPrice());
         model.addAttribute("description", product.getDescription());
+        model.addAttribute("id_prod", product.getId_prod());
         return "one_product";
     }
 
@@ -109,6 +104,7 @@ public class ProductController {
         return "all_product";
     }
 
+    // sort по наименованию
     @RequestMapping(value = "/getAll0", method = RequestMethod.GET, produces = "application/json")
     public String getAllProducts0(Model model) {
         List<Product> products = productService.getAllProduct();
@@ -116,6 +112,7 @@ public class ProductController {
         return "all_product";
     }
 
+    // sort цена по возрастанию
     @RequestMapping(value = "/getAll1", method = RequestMethod.GET, produces = "application/json")
     public String getAllProducts1(Model model) {
         List<Product> products = productService.getAllProduct1();
@@ -123,6 +120,7 @@ public class ProductController {
         return "all_product";
     }
 
+    // sort цена по уменьшению
     @RequestMapping(value = "/getAll2", method = RequestMethod.GET, produces = "application/json")
     public String getAllProducts2(Model model) {
         List<Product> products = productService.getAllProduct1();

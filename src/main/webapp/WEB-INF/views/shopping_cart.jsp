@@ -13,32 +13,31 @@
 <c:forEach var="item" items="${items}">
     <table border="0">
         <tr>
-                <%--<td rowspan="4"><img src="/resources/image/tehnika.resized.jpg"></td>--%>
-            <td>Title: </td>
+            <td>Title:</td>
             <td>${item.product.title_prod}</td>
         </tr>
         <tr>
-            <td>Price: </td>
+            <td>Price:</td>
             <td>${item.product.price}</td>
         </tr>
         <tr>
-            <td>description: </td>
+            <td>description:</td>
             <td>${item.product.description}</td>
         </tr>
         <tr>
             <td rowspan="4"><img height="85" width="128" src="/resources/images/${item.product.id_prod}.jpg"></td>
         </tr>
-
         <tr>
             <td>
-                <input id="quantity" type="input" size="3" name="quantity[${item.product.id_prod}]" value="${item.quantity}"/>
+                <input id="quantity" type="input" size="3" name="quantity[${item.product.id_prod}]"
+                       value="${item.quantity}"/>
                 <input type="button" class="delete" value="Del" data-product-id="${item.product.id_prod}">
             </td>
         </tr>
     </table>
 </c:forEach>
-<div >
-    <table  border="0">
+<div>
+    <table border="0">
         <tr>
             <td>TotalCost:</td>
             <td id="totalCost">${totalCost}</td>

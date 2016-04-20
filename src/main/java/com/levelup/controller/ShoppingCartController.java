@@ -66,7 +66,7 @@ public class ShoppingCartController {
             httpSession.setAttribute("cart", cart);
         }
         model.addAttribute("totalAmount", cart.getTotalAmount());
-        model.addAttribute("totalCost",  cart.getTotalCost());
+        model.addAttribute("totalCost", cart.getTotalCost());
 
         return new ResponseEntity(model, HttpStatus.OK);
     }
@@ -83,9 +83,10 @@ public class ShoppingCartController {
         }
         model.addAttribute("items", cart.getShoppingCartItem());
         model.addAttribute("totalAmount", cart.getTotalAmount());
-        model.addAttribute("totalCost",  cart.getTotalCost());
+        model.addAttribute("totalCost", cart.getTotalCost());
         return "shopping_cart";
     }
+
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
@@ -98,9 +99,10 @@ public class ShoppingCartController {
             cart = new ShoppingCart();
         }
         model.addAttribute("totalAmount", cart.getTotalAmount());
-        model.addAttribute("totalCost",  cart.getTotalCost());
+        model.addAttribute("totalCost", cart.getTotalCost());
         return new ResponseEntity(model, HttpStatus.OK);
     }
+
 
     @RequestMapping(value = "/{id_prod}", method = RequestMethod.POST, produces = "application/json")
 
@@ -115,14 +117,12 @@ public class ShoppingCartController {
         Iterator<ShoppingCartItem> iter = carts.iterator();
         while (iter.hasNext()) {
             ShoppingCartItem item = iter.next();
-            if (item.getProduct().getId_prod() ==productCart.getId_prod()) {
+            if (item.getProduct().getId_prod() == productCart.getId_prod()) {
                 cart.removeItem(item);
             }
         }
         httpSession.setAttribute("cart", cart);
         model.addAttribute("items", cart.getShoppingCartItem());
-//        model.addAttribute("totalAmount", cart.getTotalAmount());
-//        model.addAttribute("totalCost",  cart.getTotalCost());
         return new ModelAndView("redirect:checkout");
     }
 

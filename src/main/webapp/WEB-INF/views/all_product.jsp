@@ -31,19 +31,9 @@
 </div>
 
 
-<%--<div>--%>
-<%--Отсортировать:--%>
-<%--<select onchange="val()" id="select_id">--%>
-<%--<option selected value="0">по названию</option>--%>
-<%--<option value="1">цена(увеличение)</option>--%>
-<%--<option value="2">цена(уменьшение)</option>--%>
-<%--</select>--%>
-<%--</div>--%>
-
 <div id="sort_view">
     <span>Сортировка</span>
     <select class="select_id" onchange="val()"  id="select_id">
-    <%--<select onchange="location = this.value;" id="select_id">--%>
         <option  value="0">по названию</option>
         <option  value="1">цена(увеличение)</option>
         <option  value="2">цена(уменьшение)</option>
@@ -52,7 +42,7 @@
 
 
 <c:forEach var="product" items="${products}">
-    <table id="ttt" border="0">
+    <table id="ttt" border="1px">
         <tr>
             <td rowspan="4"><img height="85" width="128" src="/resources/images/${product.id_prod}.jpg"></td>
             <td>${product.title_prod}</td>
@@ -68,34 +58,11 @@
                 <input id="cart_btn" class="btn add2card" type="button" value="Add to cart"
                        data-product-id="${product.id_prod}"/>
                 <a href='/product/find/${product.id_prod}'>
-                    <input type="button" class="btn" value="View" data-product-id="${product.id_prod}">
+                    <input id="View" type="button" class="btn" value="View" data-product-id="${product.id_prod}">
                 </a>
             </td>
         </tr>
     </table>
 </c:forEach>
-
-
-<%--<script>--%>
-<%--$('#cart_btn').on("click", function(event){--%>
-<%--alert("AAAA");--%>
-<%--var id_prod = $(this).data('product-id');--%>
-<%--alert(id_prod);--%>
-<%--$.ajax({--%>
-<%--url: "/cart/product/" + id_prod,--%>
-<%--dataType: 'JSON',--%>
-<%--type: 'GET',--%>
-<%--success: function(response){--%>
-<%--$('#totalCost').html(response.totalCost);--%>
-<%--$('#totalAmount').html(response.totalAmount);--%>
-
-
-<%--alert( "Всего добавлено товаров: " + totalAmount + "На сумму: " + totalAmount);--%>
-
-<%--}--%>
-<%--});--%>
-
-<%--});--%>
-<%--</script>--%>
 
 

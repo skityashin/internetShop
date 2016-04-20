@@ -1,8 +1,7 @@
-
 $(document).ready(function () {
     $(":button").click(function () {
         var val3 = $("#createEmail").val();
-        if (val3 != "") //val.length > 2 &&
+        if (val3 != "") 
         {
             $("#Name6").show();
             $("#Name6").hide(5000);

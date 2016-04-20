@@ -31,7 +31,6 @@ $(document).ready(function () {
             e.preventDefault();
             $(this).removeClass("g-rid-input__eye_blue").addClass("g-rid-input__eye");
             $("#createPassword1").replaceWith($("#createPassword1").clone().attr("type", "password"));
-            //$(id).clone().attr("id", "newId").find("#input_1").attr("id", "input_2");
         }
     );
 });
