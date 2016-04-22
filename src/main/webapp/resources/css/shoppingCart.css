@@ -2,21 +2,22 @@
 
     width: 240px;
     height: 210px;
-    background: #ccc;
+    background: #FA58F4;
     padding: 5px;
-    padding-right: 20px;
     padding-right: 20px;
     float: right;
     margin-top: 0px;
 }
 
 #cart_btn {
-     background-color: #00FF40;
+     background-color: #2EFE64;
 }
 #View {
-     background-color: #2E64FE;
+     background-color: #58D3F7;
 }
 #sort_view {
+    margin-bottom:  10px;
+    margin-top: 10px;
     color: #FF0040;
 }
 

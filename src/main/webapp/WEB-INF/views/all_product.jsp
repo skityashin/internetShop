@@ -16,7 +16,7 @@
     <p><a href="cart"><img src="http://www.linestyle.com.ua/ru/images/car.png"
                            width="149" height="110" alt="cart"></a>
     </p>
-    <table id="shoppingCart1" border="0">
+    <table id="shoppingCart1" border="1" style="color: yellow">
         <tr>
             <td>TotalCost:</td>
             <td id="totalCost">${totalCost}</td>
@@ -33,18 +33,18 @@
 
 <div id="sort_view">
     <span>Сортировка</span>
-    <select class="select_id" onchange="val()"  id="select_id">
-        <option  value="0">по названию</option>
-        <option  value="1">цена(увеличение)</option>
-        <option  value="2">цена(уменьшение)</option>
+    <select class="select_id" onchange="val()"  id="select_id" >
+        <option style="color:indigo" value="0">по названию</option>
+        <option style="color:gold" value="1">цена(увеличение)</option>
+        <option style="color:tomato" value="2">цена(уменьшение)</option>
     </select>
 </div>
 
 
 <c:forEach var="product" items="${products}">
-    <table id="ttt" border="1px">
+    <table id="ttt" border="1px" style="color: black">
         <tr>
-            <td rowspan="4"><img height="85" width="128" src="/resources/images/${product.id_prod}.jpg"></td>
+            <td rowspan="4"><img height="128" width="192" src="/resources/images/${product.id_prod}.jpg"></td>
             <td>${product.title_prod}</td>
         </tr>
         <tr>
@@ -62,6 +62,7 @@
                 </a>
             </td>
         </tr>
+        <br>
     </table>
 </c:forEach>
 

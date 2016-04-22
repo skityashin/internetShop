@@ -8,7 +8,7 @@
         <a href="/product/getAll">Каталог</a> |
         <a href="#">Админка</a> |
         <a href="/product/find/{id_prod}">Продукт</a> |
-        <a href="#">Кредит</a> |
+        <a href="/hello">Кредит</a> |
         <a  href="/cart/checkout">Корзина</a>
     </div>
 

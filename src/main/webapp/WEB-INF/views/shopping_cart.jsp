@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/shoppingCart.css">
 
 <c:forEach var="item" items="${items}">
-    <table border="0">
+    <table border="1">
         <tr>
             <td>Title:</td>
             <td>${item.product.title_prod}</td>
@@ -29,15 +29,30 @@
         </tr>
         <tr>
             <td>
-                <input id="quantity" type="input" size="3" name="quantity[${item.product.id_prod}]"
-                       value="${item.quantity}"/>
+                <div>
+                    <a href="" class="minus" name="minus" >
+                        <img src="/resources/images/minus.jpg" width="20" height="20" class="minus-icon">
+                    </a>
+                    <input id="quantity" type="input" size="1" name="quantity[${item.product.id_prod}]"
+                           value="${item.quantity}"/>
+                    <a href="" class="plus" name="plus">
+                        <img src="/resources/images/plus.jpg" width="20" height="20" class="plus-icon">
+                    </a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <input type="button" class="delete" value="Del" data-product-id="${item.product.id_prod}">
             </td>
         </tr>
+
+        <br>
     </table>
 </c:forEach>
+<br>
 <div>
-    <table border="0">
+    <table border="2">
         <tr>
             <td>TotalCost:</td>
             <td id="totalCost">${totalCost}</td>
@@ -50,4 +65,6 @@
         </tr>
     </table>
 </div>
+
+
 

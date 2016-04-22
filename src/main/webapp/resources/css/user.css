@@ -207,6 +207,7 @@ input[type=checkbox], input[type=radio] {
     margin-left: 23.5em;
     padding: 2em;
     background: #EED8AE;
+
 }
 
 .hub-i-link {
@@ -225,9 +226,10 @@ input[type=checkbox], input[type=radio] {
 
 #sidebar {
     margin-top: 1em;
-    width: 20em;
+    /*width: 20em;*/
     padding: 0 10px;
     float: left;
+    font-size: 2em;
 }
 
 
@@ -244,9 +246,9 @@ input[type=checkbox], input[type=radio] {
 
 @keyframes spinner5 {
     from,15% {
-        -moz-transform: rotateY(0);
-        -ms-transform: rotateY(0);
-        transform: rotateY(0);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
     }
     20%,35%  {
         -moz-transform: rotateY(-72deg);

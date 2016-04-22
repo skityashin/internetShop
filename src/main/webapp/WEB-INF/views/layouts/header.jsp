@@ -102,7 +102,7 @@
         <li><a class="sel" href="/product/getAll"><span></span>Каталог</a></li>
         <li><a href="#"><span></span>Админка</a></li>
         <li><a href="/product/find/{id_prod}"><span></span>Продукт</a></li>
-        <li><a href="#"><span></span>Кредит</a></li>
+        <li><a href="/hello"><span></span>Кредит</a></li>
         <li><a href="/cart/checkout" ><span></span>Корзина</a></li>
     </ul>
 </div>
