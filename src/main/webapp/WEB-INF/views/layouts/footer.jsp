@@ -5,11 +5,11 @@
 
     <div id="footer">
         Copyright © Skityashin;
+        <a href="/hello">На главную</a> |
         <a href="/product/getAll">Каталог</a> |
         <a href="#">Админка</a> |
         <a href="/product/find/{id_prod}">Продукт</a> |
-        <a href="/hello">Кредит</a> |
-        <a  href="/cart/checkout">Корзина</a>
+        <a href="/cart/checkout">Корзина</a>
     </div>
 
 

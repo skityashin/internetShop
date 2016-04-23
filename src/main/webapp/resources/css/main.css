@@ -227,31 +227,30 @@ input[type=checkbox], input[type=radio] {
     color: green;
 }
 .g-rid-input__eye_blue1 {
-    background-image: url(http://qutu.ws/chat/img/share_eye.png);
+    background-image: url(/resources/images/eye.png);
     position: absolute;
-    width: 18px;
-    height: 12px;
-    top: 6px;
+    width: 16px;
+    height: 16px;
+    top: 4px;
     right: 5px;
     display: block;
     z-index: 2;
     cursor: pointer;
-}
-.g-rid-input__eye1 {
-    background-image: url(http://www.iconsearch.ru/uploads/icons/fugue/16x16/eye-disable.png);
-    position: absolute;
-    width: 18px;
-    height: 12px;
-    top: 6px;
-    right: 5px;
-    display: block;
-    z-index: 2;
-    cursor: pointer;
-}
-.g-pseudo-link_reload-icon:after, .g-rid-input__eye1{
     background-position: 0 0;
     background-repeat: no-repeat;
 }
+.g-rid-input__eye1 {
+    background-image: url(/resources/images/eye-disable.png);
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    right: 5px;
+    display: block;
+    z-index: 2;
+    cursor: pointer;
+}
+
 .registration_common_block1 {
     position: relative;
     top: 1em;

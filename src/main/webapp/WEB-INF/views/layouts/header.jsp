@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/resources/js/main.js"></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
-<%--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>--%>
-<%--<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>--%>
-<script  type="text/javascript" src="/resources/js/main.js"></script>
+
 
 <div id="header">
     <h1>Добро пожаловать!</h1>
@@ -14,12 +13,12 @@
 
     <div id="search">
 
-        <form  class="header-search1" method="POST" action="/product/write" role="search">
+        <form class="header-search1" method="POST" action="/product/write" role="search">
             <div>
                 <input autocomplete="off" type="text" class="header-search-input-text1" placeholder="Поиск"
                        value="" tabindex="1" name="search" autocomplete="off">
             </div>
-                <span class="btn-link-green1" >
+                <span class="btn-link-green1">
                     <button class="btn-link-i1" type="submit">Найти</button>
                 </span>
         </form>
@@ -32,11 +31,11 @@
                 <label for="createEmail2" class="rid-line__label1 rid-line__label_wide1">
                     <div class="rid-line__label-line1">Email</div>
                 </label>
-
                 <div class="rid-line__content1">
                     <div class="rid-emailpick1">
                         <div class="rid-emailpick__name1">
-                            <input type="text" class="g-rid-input1" value="" name= "email" id="createEmail2" placeholder="Введите Email">
+                            <input type="text" class="g-rid-input1" value="" name="email" id="createEmail2"
+                                   placeholder="Введите Email">
                         </div>
                     </div>
                 </div>
@@ -47,9 +46,6 @@
                         <div class="rid-line__tip-line1" id="Name1" style="display:none">ok</div>
                     </div>
                 </div>
-                <div class="rid-line1 rid-line_subline1">
-                    <div class="suggest_wrap g-hidden1"></div>
-                </div>
             </div>
             <div>
                 <div class="rid-line1">
@@ -59,15 +55,15 @@
 
                     <div class="rid-line__content1">
                         <div class="rid-line__input1 rid-line__input_profile-edit1 ">
-                            <input type="password" class="g-rid-input1 g-rid-input_password1"  value=""  name= "pass" id="createPassword2">
+                            <input type="password" class="g-rid-input1 g-rid-input_password1" value="" name="pass"
+                                   id="createPassword2">
                             <span class="g-rid-input__eye1 g-rid-input__eye_grey1" id="createPassword11"></span>
                         </div>
                     </div>
                     <div class="rid-line__tip1">
                         <div class="rid-line__tip-content1">
                             <div class="rid-line__tip-line1" style="display:none" id="Name2">Пароль должен содержать от
-                                6
-                                символов
+                                6 символов
                             </div>
                             <div class="rid-line__tip-line1" id="Name3" style="display:none">ok</div>
                         </div>
@@ -93,16 +89,15 @@
                     <%--</div>--%>
                 </div>
             </div>
-
         </form>
     </div>
 
 
     <ul id="menu">
+        <li><a href="/hello"><span></span>На главную</a></li>
         <li><a class="sel" href="/product/getAll"><span></span>Каталог</a></li>
         <li><a href="#"><span></span>Админка</a></li>
         <li><a href="/product/find/{id_prod}"><span></span>Продукт</a></li>
-        <li><a href="/hello"><span></span>Кредит</a></li>
-        <li><a href="/cart/checkout" ><span></span>Корзина</a></li>
+        <li><a href="/cart/checkout"><span></span>Корзина</a></li>
     </ul>
 </div>

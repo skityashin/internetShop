@@ -19,12 +19,12 @@
     <table id="shoppingCart1" border="1" style="color: yellow">
         <tr>
             <td>TotalCost:</td>
-            <td id="totalCost">${totalCost}</td>
+            <td width="70px" align="center"  id="totalCost">${totalCost}</td>
             <td>гривен</td>
         </tr>
         <tr>
             <td>TotalAmount:</td>
-            <td id="totalAmount">${totalAmount}</td>
+            <td  align="center"  id="totalAmount">${totalAmount}</td>
             <td>шт</td>
         </tr>
     </table>
@@ -45,17 +45,17 @@
     <table id="ttt" border="1px" style="color: black">
         <tr>
             <td rowspan="4"><img height="128" width="192" src="/resources/images/${product.id_prod}.jpg"></td>
-            <td>${product.title_prod}</td>
+            <td  align="center" >${product.title_prod}</td>
         </tr>
         <tr>
-            <td>Price: ${product.price}</td>
+            <td  align="center" >Price: ${product.price}</td>
         </tr>
         <tr>
-            <td>${product.description}</td>
+            <td  align="center" >${product.description}</td>
         </tr>
         <tr>
             <td>
-                <input id="cart_btn" class="btn add2card" type="button" value="Add to cart"
+                <input id="cart_btn" class="btn add2cart" type="button" value="Add to cart"
                        data-product-id="${product.id_prod}"/>
                 <a href='/product/find/${product.id_prod}'>
                     <input id="View" type="button" class="btn" value="View" data-product-id="${product.id_prod}">

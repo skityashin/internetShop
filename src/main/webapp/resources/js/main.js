@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $(":button").click(function (e) {
+    // $(":button").click(function (e) {
+    $( "#createEmail2" ).on( "blur", function (e) {
         e.preventDefault();
         var val3 = $("#createEmail2").val();
         if (val3 != "") //val.length > 2 &&
@@ -11,7 +12,9 @@ $(document).ready(function () {
             $("#Name4").show();
             $("#Name4").hide(5000);
         }
-        var val4 = $("#createPassword11").val();
+    });
+    $( "#createPassword2" ).on( "blur", function (e) {
+        var val4 = $("#createPassword2").val();
         if (val4.length > 5 && val4 != "") {
             $("#Name3").show();
             $("#Name3").hide(5000);
@@ -20,17 +23,19 @@ $(document).ready(function () {
             $("#Name2").show();
             $("#Name2").hide(5000);
         }
+
     });
+
     $("#createPassword11").toggle(
         function (e) {
             e.preventDefault();
             $(this).removeClass("g-rid-input__eye1").addClass("g-rid-input__eye_blue1");
-            $("#createPassword1").replaceWith($("#createPassword1").clone().attr("type", "text"));
+            $("#createPassword2").replaceWith($("#createPassword2").clone().attr("type", "text"));
         },
         function (e) {
             e.preventDefault();
-            $(this).removeClass("g-rid-input__eye_blue").addClass("g-rid-input__eye");
-            $("#createPassword1").replaceWith($("#createPassword1").clone().attr("type", "password"));
+            $(this).removeClass("g-rid-input__eye_blue1").addClass("g-rid-input__eye1");
+            $("#createPassword2").replaceWith($("#createPassword2").clone().attr("type", "password"));
         }
     );
 });
