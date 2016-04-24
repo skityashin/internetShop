@@ -71,6 +71,34 @@ public class ShoppingCartController {
         return new ResponseEntity(model, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/productdel/{id_prod}", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public ResponseEntity delCart(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
+
+        Product productCart = productService.findById(id_prod);
+        ShoppingCartItem shoppingCartItem = new ShoppingCartItem();
+        shoppingCartItem.setQuantity(-1);
+        shoppingCartItem.setProduct(productCart);
+
+        ShoppingCart cart;
+        httpSession = httpServletRequest.getSession(true);
+        cart = (ShoppingCart) httpSession.getAttribute("cart");
+
+        if (cart == null) {
+            cart = new ShoppingCart();
+            cart.addItem(shoppingCartItem);
+            httpSession.setAttribute("cart", cart);
+        } else {
+            cart.addItem(shoppingCartItem);
+            httpSession.setAttribute("cart", cart);
+        }
+
+        model.addAttribute("totalAmount", cart.getTotalAmount());
+        model.addAttribute("totalCost", cart.getTotalCost());
+
+        return new ResponseEntity(model, HttpStatus.OK);
+    }
+
 
     @RequestMapping(value = "/checkout", method = RequestMethod.GET)
     public String checkout(Model model, HttpServletRequest httpServletRequest) {
@@ -105,7 +133,6 @@ public class ShoppingCartController {
 
 
     @RequestMapping(value = "/{id_prod}", method = RequestMethod.POST, produces = "application/json")
-
     public ModelAndView remove(@PathVariable long id_prod, Model model, HttpServletRequest httpServletRequest) {
 
         ShoppingCart cart;

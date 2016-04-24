@@ -5,7 +5,7 @@
 
 
 <div id="shoppingCart">shoppingCart
-    <p><a href="cart"><img src="http://www.linestyle.com.ua/ru/images/car.png"
+    <p><a href="/cart/checkout"><img src="http://www.linestyle.com.ua/ru/images/car.png"
                            width="149" height="110" alt="cart"></a>
     </p>
     <table id="shoppingCart1"border="1" style="color: yellow">

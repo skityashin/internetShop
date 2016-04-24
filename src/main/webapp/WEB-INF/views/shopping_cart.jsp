@@ -31,11 +31,13 @@
         <tr>
             <td>
                 <div>
-                    <a href="" class="minus" name="minus" >
+                    <a type="button" class="btn delcart" data-product-id="${item.product.id_prod}" >
                         <img src="/resources/images/minus.jpg" width="20" height="20" class="minus-icon">
                     </a>
-                    <input id="quantity" type="text" style="text-align:center" size="1" max="100" min="1" name="quantity" value="${item.quantity}"/>
-                     <a href="${product.id_prod}" type="button" class="btn add2cart" data-product-id="${item.product.id_prod}">
+                        <input id="quantity" type="text" style="text-align:center" size="1" max="100" min="1"
+                               name="quantity" value="${item.quantity}"/>
+                    <%--<div id="quantity">${item.quantity}</div>--%>
+                     <a type="button" class="btn add2cart" data-product-id="${item.product.id_prod}">
                         <img src="/resources/images/plus.jpg" width="20" height="20" class="plus-icon">
                     </a>
                 </div>
