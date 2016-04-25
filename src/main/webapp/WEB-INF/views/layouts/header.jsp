@@ -21,8 +21,17 @@
                 <span class="btn-link-green1">
                     <button class="btn-link-i1" type="submit">Найти</button>
                 </span>
+
+            <%--<div id="location">--%>
+
+                <%--<div >Город</div>--%>
+                <%----%>
+            <%--</div>--%>
         </form>
+
     </div>
+
+
 
 
     <div class="registration_common_block1">
@@ -56,7 +65,7 @@
                     <div class="rid-line__content1">
                         <div class="rid-line__input1 rid-line__input_profile-edit1 ">
                             <input type="password" class="g-rid-input1 g-rid-input_password1" value="" name="pass"
-                                   id="createPassword2">
+                                   id="createPassword2" placeholder="Введите Пароль">
                             <span class="g-rid-input__eye1 g-rid-input__eye_grey1" id="createPassword11"></span>
                         </div>
                     </div>

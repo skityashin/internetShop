@@ -42,7 +42,7 @@
 
 
 <c:forEach var="product" items="${products}">
-    <table id="ttt" border="1px" style="color: black">
+    <table id="ttt" border="1px" style="color: black" >
         <tr>
             <td rowspan="4"><img height="128" width="192" src="/resources/images/${product.id_prod}.jpg"></td>
             <td  align="center" >${product.title_prod}</td>

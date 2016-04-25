@@ -112,6 +112,7 @@ public class ShoppingCartController {
         model.addAttribute("items", cart.getShoppingCartItem());
         model.addAttribute("totalAmount", cart.getTotalAmount());
         model.addAttribute("totalCost", cart.getTotalCost());
+
         return "shopping_cart";
     }
 

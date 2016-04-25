@@ -5,9 +5,9 @@
 
 <section class="content">
     <div id="sidebar">
-        <p><a href="___.html">Телефизоры</a></p>
+        <p><a href="/product/tv">Телефизоры</a></p>
 
-        <p><a href="___.html">Смартфоны</a></p>
+        <p><a href="/product/mob">Смартфоны</a></p>
 
         <p><a href="___.html">Планшеты</a></p>
 

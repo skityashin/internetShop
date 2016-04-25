@@ -129,4 +129,20 @@ public class ProductController {
         return "all_product";
     }
 
+    // sort tv
+    @RequestMapping(value = "/tv", method = RequestMethod.GET, produces = "application/json")
+    public String getTvProducts(Model model) {
+        List<Product> products = productService.getAllProduct2();
+        model.addAttribute("products", products);
+        return "all_product";
+    }
+
+    // sort mob
+    @RequestMapping(value = "/mob", method = RequestMethod.GET, produces = "application/json")
+    public String getMobProducts(Model model) {
+        List<Product> products = productService.getAllProduct3();
+        model.addAttribute("products", products);
+        return "all_product";
+    }
+
 }
