@@ -15,6 +15,7 @@ public interface ProductService {
 
     void saveProduct (Product product);
     Product findById (long id_prod);
+    Product findByTitle (String title_prod);
     void updateProduct (Product product);
     void deleteProduct (long id_prod);
     List<Product> getAllProduct ();

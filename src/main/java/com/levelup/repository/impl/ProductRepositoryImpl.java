@@ -3,6 +3,8 @@ package com.levelup.repository.impl;
 import com.levelup.model.Product;
 import com.levelup.repository.ProductRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -36,6 +38,19 @@ public class ProductRepositoryImpl implements ProductRepository{
     public Product findById(long id_prod) {
         return entityManager.find(Product.class, id_prod);
     }
+
+    @Override
+    public Product findByTitle(String title_prod) {
+        Query query = entityManager.createQuery("SELECT p FROM Product p WHERE p.title_prod = :title_prod");
+        query.setParameter("title_prod", title_prod);
+        List<Product> products = query.getResultList();
+        if (!CollectionUtils.isEmpty(products)) {
+            return products.get(0);
+        }
+        return null;
+    }
+
+
 
     @Override
     public void updateProduct(Product product) {

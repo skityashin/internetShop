@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-
     $('.add2cart').on("click", function () {
         var id_prod = $(this).data('product-id');
         $.ajax({
@@ -44,45 +42,38 @@ $(document).ready(function () {
         }
     });
 
-
-
-
     $("a[data-type='delcart']").click(function() {
         var input = $(this).parent().find('input');
         var id_prod = $(this).data("product-id");
-        alert(id_prod);
         var num = input.val();
         if (num > 1) {
             num--;
             input.val(num);
-                $.ajax({
-                    url: '/cart/productdel/' + id_prod,
-                    dataType: 'JSON',
-                    type: 'GET',
-                    success: function (response) {
-                        $('#quantity').html(response.quantity);
-                        $('#totalCost').html(response.totalCost);
-                        $('#totalAmount').html(response.totalAmount);
-                    }
-                });
-
+            $.ajax({
+                url: '/cart/productdel/' + id_prod,
+                dataType: 'JSON',
+                type: 'GET',
+                success: function (response) {
+                    $('#quantity').html(response.quantity);
+                    $('#totalCost').html(response.totalCost);
+                    $('#totalAmount').html(response.totalAmount);
+                }
+            });
             console.log('delete item id: ' + input.data('item'));
         }else{
-                    $.ajax({
-                    url: '/cart/' + id_prod,
-                    type: 'POST',
-                    success: function () {
-                        $('#totalCost').html(response.totalCost);
-                        $('#totalAmount').html(response.totalAmount);
-                        alert("GGG")
-
-                    }
-                });
-            document.location.reload();
-            }
-
-        return false;
+             $.ajax({
+                 url: '/cart/' + id_prod,
+                 type: 'POST',
+                 success: function () {
+                     $('#totalCost').html(response.totalCost);
+                     $('#totalAmount').html(response.totalAmount);
+                 }
+             });
+           location.reload();
+        }
+        // return false;
     });
+
     $("a[data-type='add2cart']").click(function() {
         var input = $(this).parent().find('input');
         var num = input.val();
@@ -94,6 +85,7 @@ $(document).ready(function () {
         }
         return false;
     });
+
     $("input[data-item]").change(function() {
         var num = $(this).val() - 0;
         if (isNaN(num)) {
@@ -108,6 +100,4 @@ $(document).ready(function () {
         // ajax here
         console.log('change item id: ' + $(this).data('item') + ' to ' + num  + ' value');
     });
-
-
 });
