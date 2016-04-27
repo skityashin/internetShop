@@ -2,6 +2,7 @@
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="/resources/js/main.js"></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
+<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 
 
 <div id="header">
@@ -22,11 +23,6 @@
                     <button class="btn-link-i1" type="submit">Найти</button>
                 </span>
 
-            <%--<div id="location">--%>
-
-                <%--<div >Город</div>--%>
-                <%----%>
-            <%--</div>--%>
         </form>
 
     </div>
@@ -86,6 +82,10 @@
                             <button class="rid-btn1 rid-btn_save1" id="rid-btn__inner">
                                 <span>Login</span>
                             </button>
+                            <div id="city">
+                                <div >Ваш город: </div>
+                                <div id="user-city"> </div>
+                            </div>
                         </div>
                     </div>
                     <%--<div class="rid-line__tip1">--%>

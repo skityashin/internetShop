@@ -38,6 +38,11 @@ $(document).ready(function () {
             $("#createPassword2").replaceWith($("#createPassword2").clone().attr("type", "password"));
         }
     );
+
+    window.onload = function () {
+        jQuery("#user-city").text(ymaps.geolocation.city);
+    }
+    
 });
 
 

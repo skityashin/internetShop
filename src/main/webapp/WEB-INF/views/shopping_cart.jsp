@@ -34,7 +34,7 @@
                     <a href="#" data-type="delcart" class="btn delcart" data-product-id="${item.product.id_prod}" >
                         <img src="/resources/images/minus.jpg" width="20" height="20" >
                     </a>
-                        <input  type="text" style="text-align:center" size="1" max="100" min="1"
+                        <input class="item_quan" type="text" style="text-align:center" size="1" max="100" min="1"
                                name="quantity" value="${item.quantity}"/>
                      <a  href="#" data-type="add2cart"  class="btn add2cart" data-product-id="${item.product.id_prod}">
                         <img src="/resources/images/plus.jpg" width="20" height="20">

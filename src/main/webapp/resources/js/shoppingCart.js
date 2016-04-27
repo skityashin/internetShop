@@ -15,22 +15,23 @@ $(document).ready(function () {
             }
         });
     });
-    $('.delcart').on("click", function () {
-        var id_prod = $(this).data('product-id');
-        $.ajax({
-            url: '/cart/productdel/' + id_prod,
-            dataType: 'JSON',
-            type: 'GET',
-            success: function (response) {
-                $('#quantity').html(response.quantity);
-                $('#totalCost').html(response.totalCost);
-                $('#totalAmount').html(response.totalAmount);
-
-
-                // document.location.reload();
-            }
-        });
-    });
+    // $('.delcart').on("click", function () {
+    //     var id_prod = $(this).data('product-id');
+    //     alert("NOT");
+    //     $.ajax({
+    //         url: '/cart/productdel/' + id_prod,
+    //         dataType: 'JSON',
+    //         type: 'GET',
+    //         success: function (response) {
+    //             $('#quantity').html(response.quantity);
+    //             $('#totalCost').html(response.totalCost);
+    //             $('#totalAmount').html(response.totalAmount);
+    //
+    //
+    //             // document.location.reload();
+    //         }
+    //     });
+    // });
 
     $.ajax({
         url: '/cart/info',
@@ -48,13 +49,38 @@ $(document).ready(function () {
 
     $("a[data-type='delcart']").click(function() {
         var input = $(this).parent().find('input');
+        var id_prod = $(this).data("product-id");
+        alert(id_prod);
         var num = input.val();
-        if (num > 0) {
+        if (num > 1) {
             num--;
             input.val(num);
-            // ajax here
+                $.ajax({
+                    url: '/cart/productdel/' + id_prod,
+                    dataType: 'JSON',
+                    type: 'GET',
+                    success: function (response) {
+                        $('#quantity').html(response.quantity);
+                        $('#totalCost').html(response.totalCost);
+                        $('#totalAmount').html(response.totalAmount);
+                    }
+                });
+
             console.log('delete item id: ' + input.data('item'));
-        }
+        }else{
+                    $.ajax({
+                    url: '/cart/' + id_prod,
+                    type: 'POST',
+                    success: function () {
+                        $('#totalCost').html(response.totalCost);
+                        $('#totalAmount').html(response.totalAmount);
+                        alert("GGG")
+
+                    }
+                });
+            document.location.reload();
+            }
+
         return false;
     });
     $("a[data-type='add2cart']").click(function() {

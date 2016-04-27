@@ -298,5 +298,10 @@ input[type=checkbox], input[type=radio] {
     position: absolute;
     top: 0.5em;
     left: 19em;
-
+}
+#city{
+    position: absolute;
+    padding-top: 0.5em;
+    left: -300%;
+    top: -2em;
 }
