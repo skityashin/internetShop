@@ -1,6 +1,7 @@
 package com.levelup.repository;
 
 import com.levelup.model.User;
+
 import java.util.List;
 
 /**
@@ -13,12 +14,31 @@ import java.util.List;
 
 public interface UserRepository {
 
-    void createUser (User user);
-    void updateUser (User user);
-    User findById (long id);
-    User findByEmail (String email);
-    List<User> getAllUsers ();
-    void deleteById (long id);
+    /**
+     * Persists new entity
+     *
+     * @param user
+     */
+    void createUser(User user);
+
+    /**
+     * Updates new entity
+     *
+     * @param user
+     */
+    void updateUser(User user);
+
+    User findById(long id);
+
+    User findByEmail(String email);
+
+    /**
+     * @return list with every {@link User} entity, persisted in database
+     */
+    List<User> getAllUsers();
+
+    void deleteById(long id);
+
     boolean isUserExist(long id);
 
 }

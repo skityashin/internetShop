@@ -22,9 +22,13 @@ import java.util.List;
 @Repository
 @Transactional
 public class CategoryRepositoryImpl implements CategoryRepository{
+
     @PersistenceContext
     private EntityManager entityManager;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void saveCategory(Category category) {
         if(category == null) {
@@ -33,33 +37,51 @@ public class CategoryRepositoryImpl implements CategoryRepository{
         entityManager.persist(category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Category findById(long id_category) {
         return entityManager.find(Category.class, id_category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateCategory(Category category) {
         entityManager.merge(category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteCategory(long id_category) {
         Category removingCategory = entityManager.find(Category.class, id_category);
         entityManager.remove(removingCategory);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Category> getAllCategory() {
         Query query = entityManager.createQuery("FROM Category");
         return (List<Category>)query.getResultList();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isCategoryExist(long  id_category) {
         return entityManager.contains( id_category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Category findByTitle(String title_category) {
         Query query = entityManager.createQuery("SELECT c FROM Category c WHERE c.title_category = :title_category");

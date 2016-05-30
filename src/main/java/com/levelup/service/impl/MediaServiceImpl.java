@@ -21,6 +21,9 @@ public class MediaServiceImpl implements MediaService{
     @Autowired
     private MediaRepository mediaRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void saveMedia(Media media) {
         if(media == null) {
@@ -29,26 +32,41 @@ public class MediaServiceImpl implements MediaService{
         mediaRepository.saveMedia(media);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateMedia(Media media) {
         mediaRepository.updateMedia(media);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Media findById(long id_media) {
         return mediaRepository.findById(id_media);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Media> getAllMedia() {
         return mediaRepository.getAllMedia();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteMedia(long id_media) {
         mediaRepository.deleteMedia(id_media);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isMediaExist(long id_media) {
         return mediaRepository.isMediaExist(id_media);

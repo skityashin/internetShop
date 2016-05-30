@@ -22,6 +22,9 @@ public class CategoryServiceImpl implements CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void saveCategory(Category category) {
         if(category == null) {
@@ -30,31 +33,49 @@ public class CategoryServiceImpl implements CategoryService {
         categoryRepository.saveCategory(category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateCategory(Category category) {
         categoryRepository.updateCategory(category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Category findById(long id_category) {
         return categoryRepository.findById(id_category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Category> getAllCategory() {
         return categoryRepository.getAllCategory();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteCategory(long id_category) {
         categoryRepository.deleteCategory(id_category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isCategoryExist(long id_category) {
         return categoryRepository.isCategoryExist(id_category);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Category findByTitle(String title_category) {
         return categoryRepository.findByTitle(title_category);

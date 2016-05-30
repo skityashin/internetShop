@@ -20,9 +20,13 @@ import java.util.List;
 @Repository
 @Transactional
 public class MediaRepositoryImpl implements MediaRepository {
+
     @PersistenceContext
     private EntityManager entityManager;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void saveMedia(Media media) {
         if(media == null) {
@@ -31,28 +35,43 @@ public class MediaRepositoryImpl implements MediaRepository {
         entityManager.persist(media);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Media findById(long id_media) {
         return entityManager.find(Media.class, id_media);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateMedia(Media media) {
         entityManager.merge(media);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteMedia(long id_media) {
         Media removingMedia = entityManager.find(Media.class, id_media);
         entityManager.remove(removingMedia);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Media> getAllMedia() {
         Query query = entityManager.createQuery("FROM Media");
         return (List<Media>)query.getResultList();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isMediaExist(long id_media) {
         return entityManager.contains(id_media);

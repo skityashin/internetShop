@@ -26,6 +26,9 @@ public class UserRepositoryImpl implements UserRepository{
     @PersistenceContext
     private EntityManager entityManager;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void createUser(User user) {
         if(user == null) {
@@ -33,16 +36,25 @@ public class UserRepositoryImpl implements UserRepository{
         } entityManager.persist(user);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateUser(User user) {
         entityManager.merge(user);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public User findById(long id) {
         return entityManager.find(User.class, id);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public User findByEmail(String email) {
         Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.email = :email");
@@ -54,18 +66,27 @@ public class UserRepositoryImpl implements UserRepository{
         return null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<User> getAllUsers() {
         Query query = entityManager.createQuery("FROM User");
         return (List<User>)query.getResultList();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteById(long id) {
         User removingUser = entityManager.find(User.class, id);
         entityManager.remove(removingUser);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isUserExist(long id) {
         return entityManager.contains(id);
