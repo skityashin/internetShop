@@ -40,6 +40,16 @@ public class ProductController {
         return "add_product";
     }
 
+    /**
+     * Method that create and add an object to the database
+     * and return response with error message if something wrong. If everything ok -
+     * response with success message
+     *
+     * @param productDto
+     * @param categoryDto
+     * @param model
+     * @return results page
+     */
     @RequestMapping(method = RequestMethod.POST, value = "/add")
     public String showResult(@ModelAttribute ProductDto productDto, @ModelAttribute CategoryDto categoryDto, Model model) {
         if (productDto == null) {
@@ -75,6 +85,16 @@ public class ProductController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    /**
+     * Method that receives an object by id from the database
+     * and return response with error message if something wrong. If everything ok -
+     * response with success message
+     *
+     * @param id_prod
+     * @param model
+     * @return result page
+     * *
+     */
     @RequestMapping(value = "/find/{id_prod}", method = RequestMethod.GET)
     public String findProduct(@PathVariable long id_prod, Model model) {
         Product product = productService.findById(id_prod);

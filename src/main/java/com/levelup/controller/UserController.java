@@ -54,6 +54,15 @@ public class UserController {
         return "user1";
     }
 
+    /**
+     * Method that create and add an object to the database
+     * and return response with error message if something wrong. If everything ok -
+     * response with success message
+     *
+     * @param userDto
+     * @param model
+     * @return results page
+     */
     @RequestMapping(value = "/join", method = RequestMethod.POST)
     public String createUser(@RequestBody UserDto userDto, Model model) {
         if (userDto == null) {
@@ -75,6 +84,15 @@ public class UserController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    /**
+     * Method that receives an object by id from the database
+     * and return response with error message if something wrong. If everything ok -
+     * response with success message
+     *
+     * @param id
+     * @return result
+     * *
+     */
     @RequestMapping(value = "/find/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity findUser(@PathVariable long id) {
@@ -85,7 +103,14 @@ public class UserController {
         return new ResponseEntity(user, HttpStatus.OK);
     }
 
-
+    /**
+     * Method that receives an list objects by id from the database
+     * and return response with error message if something wrong. If everything ok -
+     * response with success message
+     *
+     * @return result
+     * *
+     */
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public ResponseEntity getAllUsers() {
         List<User> users = userService.getAllUsers();
